@@ -3,17 +3,10 @@
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome } from "@tabler/icons-react";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
-import {  Briefcase, Contact, Download, Folder } from "lucide-react";
+import { Briefcase, Contact, Download, Folder } from "lucide-react";
+import ResumeButton from "@/app/(sections)/resume/resume-button";
 
 export default function FloatingDockPortfolioMENU() {
-  const downloadResume = () => {
-    console.log("woking");
-
-    // const link = document.createElement("a");
-    // link.href = "/resume.pdf"; // put file inside /public
-    // link.download = "Ashvary_Resume.pdf";
-    // link.click();
-  };
   const links = [
     {
       title: "Home",
@@ -47,13 +40,13 @@ export default function FloatingDockPortfolioMENU() {
     {
       title: "Resume",
       icon: (
-        <Download className="h-full w-full text-neutral-500 dark:text-neutral-400" />
+        // <Download className="h-full w-full text-neutral-500 dark:text-neutral-400" />
+        <ResumeButton />
       ),
       // href: "#",
-      onClick: downloadResume,
     },
     {
-      title: "Theme", 
+      title: "Theme",
       icon: (
         <div className="flex items-center justify-center w-full h-full ">
           <AnimatedThemeToggler className="cursor-pointer text-neutral-500 dark:text-amber-200" />

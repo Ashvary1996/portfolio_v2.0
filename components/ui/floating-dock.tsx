@@ -144,7 +144,7 @@ const FloatingDockMobile = ({
     absolute inset-0 rounded-full
     opacity-0 group-hover:opacity-100
     transition duration-300
-    bg-gradient-to-tr from-indigo-500/20 via-purple-500/20 to-pink-500/20
+    bg-linear-to-tr from-indigo-500/20 via-purple-500/20 to-pink-500/20
   "
         />
 

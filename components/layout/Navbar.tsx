@@ -1,8 +1,8 @@
 "use client";
 import FloatingDockPortfolioMENU from "@/components/floating-dock-demo";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
-import { Download } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import ResumeButton from "@/app/(sections)/resume/resume-button";
 
 function Navbar() {
   return (
@@ -29,46 +29,30 @@ function Navbar() {
       </div>
 
       {/* CENTER — Floating Dock (wider, centered) */}
-      <div className="flex-[2] flex items-center justify-center px-4 max-w-2xl mx-auto w-full">
+      <div className="flex-2 flex items-center justify-center px-4 max-w-2xl mx-auto w-full">
         <div className="w-full flex justify-center">
           <FloatingDockPortfolioMENU />
         </div>
       </div>
 
       {/* RIGHT — Resume + Theme (hidden on mobile, handled by mobile menu) */}
-      <div className="flex-1 hidden sm:flex md:flex items-center justify-end gap-1">
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <button
-              aria-label="Download Resume"
-              className="group relative p-2 rounded-xl
-                text-neutral-500 hover:text-neutral-900
-                dark:text-neutral-400 dark:hover:text-neutral-100
-                hover:bg-neutral-100 dark:hover:bg-neutral-800/60
-                transition-all duration-200 ease-out
-                active:scale-95"
-            >
-              <Download className="w-5 h-5 transition-transform duration-200 group-hover:-translate-y-0.5" />
-            </button>
-          </TooltipTrigger>
-          <TooltipContent side="bottom" className="text-xs font-medium ">
-            Download Resume
-          </TooltipContent>
-        </Tooltip>
 
+      <div className="flex-1 hidden sm:flex md:flex items-center justify-end gap-1">
+        {/* Resume */}
+        <ResumeButton />
+        {/* Theme */}
         <Tooltip>
           <TooltipTrigger asChild>
-            <button
-              aria-label="Toggle theme"
+            <div
               className="group relative p-2 rounded-xl
-                text-neutral-500 hover:text-neutral-900
-                dark:text-neutral-400 dark:hover:text-neutral-100
-                hover:bg-neutral-100 dark:hover:bg-neutral-800/60
-                transition-all duration-200 ease-out
-                active:scale-95"
+          text-neutral-500 hover:text-neutral-900
+          dark:text-neutral-400 dark:hover:text-neutral-100
+          hover:bg-neutral-100 dark:hover:bg-neutral-800/60
+          transition-all duration-200 ease-out
+          active:scale-95 cursor-pointer"
             >
-              <AnimatedThemeToggler className="w-5 h-5 cursor-pointer" />
-            </button>
+              <AnimatedThemeToggler className="w-5 h-5" />
+            </div>
           </TooltipTrigger>
           <TooltipContent side="bottom" className="text-xs font-medium">
             Toggle Theme
