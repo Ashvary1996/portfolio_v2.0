@@ -62,13 +62,11 @@ const FloatingDockMobile = ({
     <div className={cn("fixed top-4 right-4 z-50 md:hidden ", className)}>
       <AnimatePresence>
         {open && (
-          
           <motion.div
             layoutId="nav"
             // className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
             className="absolute right-0 top-full mt-2 flex flex-col gap-2 items-end bg-gray-600/30 p-2 rounded-4xl backdrop-blur-xl  shadow-lg shadow-black/10 dark:bg-white/30"
           >
-            
             {items.map((item, idx) => {
               return (
                 <motion.div
@@ -129,7 +127,7 @@ const FloatingDockMobile = ({
         className="
     group
     relative
-    flex  h-12 w-12 items-center justify-center
+    flex  h-11 w-12 items-center justify-center
     rounded-full
     border border-white/20 dark:border-white/10
     bg-white/60 dark:bg-neutral-900/60
@@ -171,6 +169,10 @@ const FloatingDockDesktop = ({
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
+  //   Hide specific items in desktop
+  const filteredItems = items.filter(
+    (item) => item.title !== "Resume" && item.title !== "Theme",
+  );
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
@@ -180,7 +182,7 @@ const FloatingDockDesktop = ({
         className,
       )}
     >
-      {items.map((item) => (
+      {filteredItems.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
       ))}
     </motion.div>

@@ -3,7 +3,7 @@
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome } from "@tabler/icons-react";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
-import {  Contact, Download, Folder } from "lucide-react";
+import {  Briefcase, Contact, Download, Folder } from "lucide-react";
 
 export default function FloatingDockPortfolioMENU() {
   const downloadResume = () => {
@@ -27,6 +27,13 @@ export default function FloatingDockPortfolioMENU() {
       title: "Projects",
       icon: (
         <Folder className="h-full w-full text-neutral-500 dark:text-neutral-400" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Experiences",
+      icon: (
+        <Briefcase className="h-full w-full text-neutral-500 dark:text-neutral-400" />
       ),
       href: "#",
     },

@@ -1,18 +1,10 @@
 import ThreeDCardDemo from "@/components/3d-card-demo";
-import FloatingDockPortfolioMENU from "@/components/floating-dock-demo";
+import Navbar from "@/components/layout/Navbar";
 
 export default function Home() {
   return (
     <>
-      <div className="sticky top-0 z-50    flex items-center justify-around w-full px-4   border-b bg-gray-100/10  backdrop-blur-sm dark:bg-neutral-900/30 dark:border-neutral-900 h-20  mt-1 dark:backdrop-blur-sm  ">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide dark:text-white">
-          ASHVARY GIDIAN
-        </h2>
-        <div className=" shrink-0">
-          <FloatingDockPortfolioMENU />
-        </div>
-      </div>
-
+      <Navbar />
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Non assumenda
         laborum facere, minus accusantium ipsam harum laudantium at atque earum
