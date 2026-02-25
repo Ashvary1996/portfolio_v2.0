@@ -3,6 +3,7 @@ import FloatingDockPortfolioMENU from "@/components/floating-dock-demo";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import ResumeButton from "@/app/(sections)/resume/resume-button";
+import { ScrollProgress } from "../ui/scroll-progress";
 
 function Navbar() {
   return (
@@ -59,6 +60,9 @@ function Navbar() {
           </TooltipContent>
         </Tooltip>
       </div>
+
+      <ScrollProgress className="fixed top-16 md:top-20 left-0 w-full z-50" />
+      {/* change bg color to give custom */}
     </header>
   );
 }

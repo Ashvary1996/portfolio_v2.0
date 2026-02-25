@@ -31,7 +31,10 @@ export default function ResumeButton() {
           </button>
         </TooltipTrigger>
 
-        <TooltipContent side="bottom" className="text-xs font-medium">
+        <TooltipContent
+          side="bottom"
+          className="   hidden md:block text-xs font-medium"
+        >
           View Resume
         </TooltipContent>
       </Tooltip>
