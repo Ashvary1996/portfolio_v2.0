@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Navbar />
       {/* <Hero /> */}
-      <Skill/>
+      {/* <Skill/> */}
       <Contact/>
 
       {/* <ThreeDCardDemo /> */}
