@@ -2,13 +2,16 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, LayoutGroup } from "motion/react";
 import { cn } from "@/lib/utils";
-
+type WordType = {
+  text: string;
+  color: string;
+};
 export const FlipWords = ({
   words,
   duration = 3000,
   className,
 }: {
-  words: string[];
+  words: WordType[];
   duration?: number;
   className?: string;
 }) => {
@@ -16,12 +19,21 @@ export const FlipWords = ({
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   // thanks for the fix Julian - https://github.com/Julian-AT
+  // const startAnimation = useCallback(() => {
+  //   const word = words[words.indexOf(currentWord) + 1] || words[0];
+  //   setCurrentWord(word);
+  //   setIsAnimating(true);
+  // }, [currentWord, words]);
   const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
+    const currentIndex = words.findIndex(
+      (word) => word.text === currentWord.text,
+    );
+
+    const nextWord = words[currentIndex + 1] || words[0];
+
+    setCurrentWord(nextWord);
     setIsAnimating(true);
   }, [currentWord, words]);
-
   useEffect(() => {
     if (!isAnimating)
       setTimeout(() => {
@@ -58,14 +70,14 @@ export const FlipWords = ({
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left     dark:text-neutral-100 px-2",
+          "z-10 inline-block relative text-left  dark:text-neutral-100 px-2",
           className,
         )}
-        key={currentWord}
+        key={currentWord.text}
       >
         {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
-        
-        {currentWord.split(" ").map((word, wordIndex) => (
+
+        {currentWord.text.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
             initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
@@ -85,7 +97,10 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block text-2xl font-bold tracking-wide "
+                className={cn(
+                  "inline-block text-2xl font-bold tracking-wide ",
+                  currentWord.color,
+                )}
               >
                 {letter}
               </motion.span>

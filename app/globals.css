@@ -50,7 +50,7 @@
   --color-primary-500: oklch(0.84 0.18 117.33);
   --spacing: 0.25rem;
 }
-
+ 
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
