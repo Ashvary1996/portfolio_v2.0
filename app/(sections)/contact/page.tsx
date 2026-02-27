@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useMemo } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Field, FieldLabel } from "@/components/ui/field";
 import {
@@ -19,13 +19,21 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
+import { z } from "zod";
 
-interface FormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+// interface FormData {
+//   name: string;
+//   email: string;
+//   subject: string;
+//   message: string;
+// }
+const contactSchema = z.object({
+  name: z.string().min(3, "Name must be at least 3 characters"),
+  email: z.email("Enter a valid email"),
+  subject: z.string().min(5, "Subject must be at least 5 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+type FormData = z.infer<typeof contactSchema>;
 
 function Contact() {
   const [formData, setFormData] = useState<FormData>({
@@ -34,17 +42,49 @@ function Contact() {
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>(
+    {},
+  );
+
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    // setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    const updated = { ...formData, [name]: value };
+    setFormData(updated);
+    // const result = contactSchema.safeParse(updated);
+    // if (!result.success) {
+    //   const fieldErrors: any = {};
+    //   result.error.issues.forEach((err) => {
+    //     fieldErrors[err.path[0]] = err.message;
+    //   });
+    //   setErrors(fieldErrors);
+    // } else {
+    //   setErrors({});
+    // }
   };
+  const isFormValid = useMemo(() => {
+    const result = contactSchema.safeParse(formData);
+    return result.success;
+  }, [formData]);
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const validatedData = contactSchema.safeParse(formData);
+    if (!validatedData.success) {
+      const fieldErrors: any = {};
+      validatedData.error.issues.forEach((issue) => {
+        fieldErrors[issue.path[0]] = issue.message;
+      });
+      setErrors(fieldErrors);
+      toast.error("Please check the highlighted fields and try again.");
+      return;
+    }
     setStatus("loading");
 
     try {
@@ -57,7 +97,7 @@ function Contact() {
       setStatus("success");
       setTimeout(() => setStatus("idle"), 3000);
       console.log(result.text);
-
+      console.log("Form submitted ✅");
       console.log("Email sent successfully:", result.text);
 
       toast.success("Email Sent Successfully", {
@@ -70,6 +110,7 @@ function Contact() {
         subject: "",
         message: "",
       });
+      setErrors({});
     } catch (error: any) {
       console.log("Failed to send email:", error?.text);
 
@@ -85,18 +126,21 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-background text-foreground"
+      className="mt-10 min-h-screen  px-4 sm:px-6 lg:px-8 bg-background text-foreground scroll-mt-18 m-2
+   
+      "
+      //     border-5 border-green-800
     >
-      <fieldset className="border border-gray-300 rounded-lg p-4 mb-12   shadow-lg">
-        <legend className="text-3xl font-bold text-center mb-4  px-1">
-          <h2 className="text-4xl font-bold tracking-tight mb-3 text-foreground">
+      <fieldset className="border border-gray-300 rounded-lg p-10     ">
+        <legend className="text-3xl font-bold text-center   ">
+          <h2 className="text-4xl font-bold tracking-tight  text-foreground">
             Contact Me
           </h2>
         </legend>
 
         <div className="container mx-auto max-w-6xl">
           {/* Section Header */}
-          <div className="text-center mb-14">
+          <div className="text-center mb-2">
             <div className="mx-auto h-1 w-16 rounded-full bg-teal-500 mb-5" />
             <p className="text-sm text-muted-foreground italic max-w-xl mx-auto leading-relaxed">
               Connect with me if you want to know more about me or my work, or
@@ -106,11 +150,11 @@ function Contact() {
           </div>
 
           {/* Main Card */}
-          <div className="rounded-2xl border border-border   shadow-xl overflow-hidden ">
-            <div className="flex flex-col md:flex-row ">
+          <div className="rounded-2xl      shadow-xl overflow-hidden ">
+            <div className="flex flex-col lg:flex-row ">
               {/* ── Left Panel: Get in Touch ── */}
-              
-                <div className="md:w-1/3 bg-muted/40 dark:bg-muted/20 px-8 py-12 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-border">
+
+              <div className="w-full lg:w-1/3   bg-muted/40 dark:bg-muted/20 px-8 py-12 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-border ">
                 <h3 className="text-2xl font-semibold mb-8 text-foreground">
                   Get in Touch
                 </h3>
@@ -179,16 +223,16 @@ function Contact() {
                   {/* GitHub */}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant={"link"}>
+                      
                         <a
                           href="https://github.com/Ashvary1996"
                           target="_blank"
                           rel="noreferrer"
-                          className="text-gray-600 hover:text-black  transition duration-300 hover:scale-150"
+                          className="text-gray-600 hover:text-black  transition duration-300 hover:scale-150 dark:hover:text-gray-500"
                         >
-                          <FaGithub size={30} />
+                          <FaGithub   size={30} />
                         </a>
-                      </Button>
+                      
                     </TooltipTrigger>
                     <TooltipContent>GitHub</TooltipContent>
                   </Tooltip>
@@ -196,16 +240,16 @@ function Contact() {
                   {/* LinkedIn */}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button variant={"link"}>
+                     
                         <a
                           href="https://www.linkedin.com/in/ashvary-gidian/"
                           target="_blank"
                           rel="noreferrer"
-                          className="text-gray-600 hover:text-blue-500 transition duration-300 hover:scale-150 "
+                          className="text-blue-500   hover:text-blue-500 transition duration-300 hover:scale-150 "
                         >
-                          <FaLinkedin size={30}   />
+                          <FaLinkedin size={30} />
                         </a>
-                      </Button>
+                      
                     </TooltipTrigger>
                     <TooltipContent>LinkedIn</TooltipContent>
                   </Tooltip>
@@ -213,20 +257,16 @@ function Contact() {
                   {/* Gmail */}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button
-                        asChild
-                        variant={"link"}
-                        className="p-0 h-auto no-underline hover:no-underline"
-                      >
+                      
                         <a
                           href="https://mail.google.com/mail/?view=cm&fs=1&to=ashvarygidian1996@gmail.com&su=Connect%20%26%20Discussion%20%7C%20Portfolio%20Enquiry&body=Hi%20Ashvary,%20I%E2%80%99m%20reaching%20out%20to%20connect%20with%20you.%20%5BPlease%20replace%20this%20line%20with%20your%20query%20or%20the%20reason%20for%20contacting.%5D%20Best%20regards,"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-orange-500 transition duration-300 hover:scale-150"
+                          className="text-gray-600 hover:text-orange-500 transition duration-300 hover:scale-150 dark:text-gray-400 dark:hover:text-orange-500"
                         >
-                          <FaEnvelope />
+                          <FaEnvelope size={30} />
                         </a>
-                      </Button>
+                       
                     </TooltipTrigger>
                     <TooltipContent>Gmail</TooltipContent>
                   </Tooltip>
@@ -234,12 +274,16 @@ function Contact() {
               </div>
 
               {/* ── Right Panel: Contact Form wrapped in MagicCard ── */}
-              <div className="md:w-2/3 p-8 md:p-12">
+              <div className="w-full lg:w-2/3   p-8 md:p-12">
                 <MagicCard
                   className="rounded-xl p-6 md:p-8"
                   gradientColor="rgba(20,184,166,0.12)" /* teal-500 at low opacity */
                 >
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    onSubmit={handleSubmit}
+                    noValidate
+                    className="space-y-6"
+                  >
                     {/* Name */}
                     <div className="space-y-1.5">
                       <label
@@ -265,6 +309,11 @@ function Contact() {
                         transition-all duration-200
                       "
                       />
+                      {errors.name && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.name}
+                        </p>
+                      )}
                     </div>
 
                     {/* Email */}
@@ -292,6 +341,11 @@ function Contact() {
                         transition-all duration-200
                       "
                       />
+                      {errors.email && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
 
                     {/* Subject */}
@@ -322,6 +376,11 @@ function Contact() {
                         transition-all duration-200
                       "
                       />
+                      {errors.subject && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.subject}
+                        </p>
+                      )}
                     </div>
 
                     {/* Message */}
@@ -349,20 +408,43 @@ function Contact() {
                         resize-none transition-all duration-200
                       "
                       />
+                      {errors.message && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.message}
+                        </p>
+                      )}
                     </Field>
 
                     {/* Submit */}
                     <div className="pt-1 flex justify-center">
-                      <Button
+                      {/* <Button
                         type="submit"
-                        disabled={status === "loading"}
+                        disabled={!isFormValid || status === "loading"}
                         className={` cursor-pointer
     min-w-[150px] transition-all duration-300 text-white
-    ${status === "idle" && "bg-teal-600 hover:bg-teal-700"}
+     ${!isFormValid ? "bg-gray-400 cursor-not-allowed" : ""}
+    ${isFormValid && status === "idle" && "bg-teal-600 hover:bg-teal-700"}
     ${status === "loading" && "bg-gray-500 cursor-not-allowed"}
     ${status === "success" && "bg-green-600"}
     ${status === "error" && "bg-red-600"}
   `}
+                      >
+                        {status === "loading" && "Sending..."}
+                        {status === "success" && "Sent ✓"}
+                        {status === "error" && "Failed ✕"}
+                        {status === "idle" && "Send Message"}
+                      </Button> */}
+
+                      <Button
+                        type="submit"
+                        // disabled={!isFormValid || status === "loading"}
+                        className="
+    min-w-[150px] text-white transition-all duration-300
+    bg-teal-600 hover:bg-teal-700
+    disabled:bg-gray-400
+    disabled:cursor-not-allowed
+    disabled:hover:bg-gray-400 cursor-pointer
+  "
                       >
                         {status === "loading" && "Sending..."}
                         {status === "success" && "Sent ✓"}

@@ -12,7 +12,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="mt-10 flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-background to-muted/30">
+    <section id="home" className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center px-6 bg-linear-to-b from-background to-muted/30 scroll-mt-10  ">
       
       {/* Small Intro */}
       <p className="text-sm md:text-base text-muted-foreground mb-4 tracking-wide">

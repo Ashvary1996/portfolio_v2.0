@@ -49,8 +49,8 @@ const sellerPunditTechStack = [
 
 const Experience = () => (
   <section
-    id="experience"
-    className="min-h-screen py-12   relative overflow-hidden"
+    id="experiences"
+    className="min-h-screen py-12   relative overflow-hidden scroll-mt-10"
     // style={{
     //   backgroundImage: `url("https://i.gifer.com/4NB4.gif")`,
     //   backgroundSize: "cover",
@@ -92,8 +92,8 @@ const Experience = () => (
               <div className="flex-1">
                 <h3 className="text-xl md:text-2xl font-bold   mb-2">
                   Backend Developer | Viacerta Abroad
-                  <span className="block text-sm   mt-1">
-                    March 2025 - Present
+                  <span className="block text-sm mt-1 text-gray-500">
+                    March 2025 - June 10 2025
                   </span>
                 </h3>
 
@@ -114,10 +114,10 @@ const Experience = () => (
                 <ul className="space-y-3">
                   {[
                     "Backend Architecture: Designed robust systems for Vicarta Abroad.",
-                    "Performance Optimization: Implemented Redis for caching.",
-                    "Real-Time Communication: Built SSE and chatbot integrations.",
-                    "Automated Email Communication.",
                     "Data Management: RESTful APIs for blogs, courses, and support.",
+                    "Performance Optimization: Implemented Redis for caching.",
+                    "Automated Email Communication.",
+                    "Real-Time Communication: Built SSE and chatbot integrations.",
                     "Lead Tracking: Automated data generation with Excel exports.",
                     "Security: JWT-based authentication and rate limiting.",
                   ].map((item, index) => (

@@ -88,7 +88,7 @@ const FloatingDockMobile = ({
                 >
                   <a
                     href={item.href}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900  "
                     onClick={item.onClick}
                   >
                     <div className="h-4 w-4 flex items-center justify-center">
@@ -170,15 +170,16 @@ const FloatingDockDesktop = ({
 }) => {
   let mouseX = useMotionValue(Infinity);
   //   Hide specific items in desktop
-  const filteredItems = items.filter(
-    (item) => item.title !== "Resume" && item.title !== "Theme",
-  );
+  // const filteredItems = items.filter(
+  //   (item) => item.title !== "Resume" && item.title !== "Theme",
+  // );
+  const filteredItems = items.filter((item) => item.title !== "Theme");
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-100 px-4 pb-3 md:flex dark:bg-neutral-900",
+        "mx-auto hidden h-16 items-end gap-4 rounded-2xl border-2  px-4 pb-3 md:flex dark:bg-neutral-900   justify-center",
         className,
       )}
     >

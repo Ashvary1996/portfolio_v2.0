@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { majorProjects, miniProjects } from "@/data/projects.js";
 
-// custom marquee tag for tech stack 
+// custom marquee tag for tech stack
 import {
   Accordion,
   AccordionContent,
@@ -34,6 +34,7 @@ import {
 import restApiIcon from "@/data/thumbnail/restApi.png";
 import Image from "next/image";
 import { ImagesBadge } from "@/components/ui/images-badge";
+import { GiOlive } from "react-icons/gi";
 
 const techIcons: Record<string, any> = {
   html: <FaHtml5 className="text-orange-400 " />,
@@ -58,7 +59,7 @@ const techIcons: Record<string, any> = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-16">
+    <section id="projects" className="py-16 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Projects</h2>
@@ -101,10 +102,28 @@ const Projects = () => {
                         hoverImageSize={{ width: 140, height: 108 }}
                         hoverTranslateY={-110}
                         hoverSpread={50}
-                         href="/gallery"
+                        href="/gallery"
                         target="_blank"
                       />
                     </span>
+                   
+                    <a href="https://ecom-app-by-ashvary.netlify.app/">
+                      Go Live 
+                      {/* live icon / website logo */}
+                    </a>
+                    <a href="/demo video">Demo Video</a>
+
+                    <div>
+                      {/* //that li contentu i will dunamicall re nder by maping */}
+                    <ul>
+                      <h3>Core Functionlaty</h3>
+                      <li>Sighn/Login/Reset/forgot page page </li>
+                      <li>Encrypted passwoedw / cookies /add to cart / mongo db  </li>
+                      <li>rest apis / admin dashborads /live mails </li>
+                      
+                    </ul>
+                  </div>
+                    {/* detail description */}
                     <Accordion type="single" collapsible>
                       <AccordionItem value="desc">
                         <AccordionTrigger className="cursor-pointer">
@@ -120,7 +139,10 @@ const Projects = () => {
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
+
+
                   </div>
+                  
                 </div>
 
                 {/* RIGHT - IMAGE (50%) */}

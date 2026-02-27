@@ -63,10 +63,10 @@ export default function SkillsAnimatedBeam() {
 
         <div className="relative z-10 gap-10 grid grid-cols-1 md:grid-cols-3 w-[80%] sm:w-[80%] lg:w-[90%]">
           {/* Frontend */}
-          <div className="rounded-2xl shadow-xl bg-gray-700  p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2">
+          <div className="rounded-2xl shadow-xl bg-black/70 p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 hover:shadow-indigo-400 dark:bg-gray-700/40 dark:hover:bg-gray-800" >
             <h3
               ref={frontRef}
-              className="font-bold text-xl mb-6 text-indigo-400 text-center"
+              className="font-bold text-xl mb-6 text-indigo-400 text-center border-b-2 border-indigo-400 p-2 w-fit m-auto"
             >
               Frontend
             </h3>
@@ -99,10 +99,10 @@ export default function SkillsAnimatedBeam() {
           </div>
 
           {/* Backend */}
-          <div className="rounded-2xl shadow-xl bg-gray-700 p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2">
+          <div className="rounded-2xl shadow-xl bg-black/70 p-6 dark:bg-gray-700/40 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 hover:shadow-purple-400 dark:hover:bg-gray-800">
             <h3
               ref={backRef}
-              className="font-bold text-xl mb-6 text-purple-400 text-center"
+              className="font-bold text-xl mb-6 text-purple-400 text-center border-b-2 border-purple-400 p-2 w-fit m-auto"
             >
               Backend
             </h3>
@@ -132,10 +132,10 @@ export default function SkillsAnimatedBeam() {
           </div>
 
           {/* Tools */}
-          <div className="rounded-2xl shadow-xl bg-gray-700 p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2">
+          <div className="rounded-2xl shadow-xl bg-black/70 p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 purple-400 dark:bg-gray-700/40 hover:shadow-pink-400 dark:hover:bg-gray-800">
             <h3
               ref={otherRef}
-              className="font-bold text-xl mb-6 text-pink-400 text-center"
+              className="font-bold text-xl mb-6 text-pink-400 text-center border-b-2 border-pink-400 p-2 w-fit m-auto"
             >
               Tools & Platforms
             </h3>
@@ -176,6 +176,7 @@ export default function SkillsAnimatedBeam() {
           curvature={isMobile ? 0 : -80}
           duration={5} // slow, satisfying travel speed
           delay={0}
+         
         />
         <AnimatedBeam
           containerRef={containerRef}

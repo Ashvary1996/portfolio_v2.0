@@ -1,8 +1,7 @@
 "use client";
 import FloatingDockPortfolioMENU from "@/components/floating-dock-demo";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
-import ResumeButton from "@/app/(sections)/resume/resume-button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"; 
 import { ScrollProgress } from "../ui/scroll-progress";
 
 function Navbar() {
@@ -25,7 +24,7 @@ function Navbar() {
           dark:from-white dark:to-neutral-400
           bg-clip-text  "
         >
-          ASHVARY GIDIAN
+          {"<ASHVARY GIDIAN/>"}
         </h2>
       </div>
 
@@ -40,7 +39,7 @@ function Navbar() {
 
       <div className="flex-1 hidden sm:flex md:flex items-center justify-end gap-1">
         {/* Resume */}
-        <ResumeButton />
+        {/* <ResumeButton /> */}
         {/* Theme */}
         <Tooltip>
           <TooltipTrigger asChild>
@@ -61,7 +60,7 @@ function Navbar() {
         </Tooltip>
       </div>
 
-      <ScrollProgress className="fixed top-16 md:top-20 left-0 w-full z-50" />
+      <ScrollProgress className="fixed top-16 md:top-20 left-0 w-full z-50 " />
       {/* change bg color to give custom */}
     </header>
   );
