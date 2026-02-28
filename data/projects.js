@@ -5,12 +5,39 @@ import bookMyShowHome from "@/data/thumbnail/bookMyShow.png";
 import todoImg from "@/data/thumbnail/todoImg.png";
 import movieImg from "@/data/thumbnail/movieImg.png";
 import weatherImg from "@/data/thumbnail/weatherImg.png";
+
 export const majorProjects = [
   {
+    slug: "e-com-app",
     title: "E-Com-App",
     duration: "26 Feb - 28 May 2024",
+    liveUrl: "https://ecom-app-by-ashvary.netlify.app/",
+    demoUrl: "https://ecom-app-by-ashvary.netlify.app/",
+    thumbnail: "/project_Images/e-commerce/ecomHome.png",
     image: ecomHome,
-    liveLink: "https://ecom-app-by-ashvary.netlify.app/",
+    images: [
+      {
+        title: "Home Page",
+        src: "/project_Images/e-commerce/ecomHome.png",
+        alt: "E-commerce home page UI",
+      },
+      {
+        title: "Book My Show Page",
+        src: "/project_Images/e-commerce/bookMyShow.png",
+        alt: "Movie booking page UI",
+      },
+      {
+        title: "Movie Details Page",
+        src: "/project_Images/e-commerce/movieImg.png",
+        alt: "Movie details layout",
+      },
+      {
+        title: "Todo Feature Page",
+        src: "/project_Images/e-commerce/todoImg.png",
+        alt: "Todo functionality screen",
+      },
+    ],
+    coreFunctionalities: [],
     gitHubLink: "https://github.com/Ashvary1996/e-com-app",
     techStackUsed: [
       "html",
@@ -29,6 +56,7 @@ export const majorProjects = [
       "mongoDbAtlas",
       "razorpay",
     ],
+    
     about: `This e-commerce web application provides a seamless shopping experience with user authentication (login, signup, password reset/forgot), product search, add-to-cart functionality, and a secure payment gateway.
 It includes a multi-step checkout process, mailing notifications, and a robust admin dashboard for content management, supporting admin/user roles and efficient management of products, orders, and user interactions.`,
     description: `
@@ -44,6 +72,7 @@ It includes a multi-step checkout process, mailing notifications, and a robust a
   `,
   },
   {
+    slug: "red-bus",
     title: "Red Bus",
     duration: "23 March - 26 April 2024",
     image: redbusHome,
@@ -82,6 +111,7 @@ It includes a multi-step checkout process, mailing notifications, and a robust a
       `,
   },
   {
+    slug: "flashcard-generator",
     title: "Flashcard Generator",
     duration: "5 Jul - 27 Oct 2023",
     image: flashcardHome,
@@ -106,6 +136,7 @@ It includes a multi-step checkout process, mailing notifications, and a robust a
   },
 
   {
+    slug: "book-my-show",
     title: "BookmyShow",
     duration: "26 Feb - 28 May 2024",
     image: bookMyShowHome,
