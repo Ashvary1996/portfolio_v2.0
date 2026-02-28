@@ -59,7 +59,7 @@ const techIcons: Record<string, any> = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-16 scroll-mt-7">
+    <section id="projects">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Projects</h2>
@@ -68,7 +68,7 @@ const Projects = () => {
           </p>
         </div>
         {/* Major Projects */}
-        <fieldset className="border border-gray-300 rounded-lg p-6">
+        <fieldset data-aos="flip-left" className="border border-gray-300 rounded-lg p-6">
           <legend className="  text-2xl mb-6">Major Projects</legend>
 
           <div className="space-y-12">
@@ -228,7 +228,7 @@ const Projects = () => {
 
         {/* Mini Projects Section */}
 
-        <fieldset className="border border-gray-300 rounded-lg p-6 mt-10">
+        <fieldset data-aos="flip-right" data-aos-delay="200" className="border border-gray-300 rounded-lg p-6 mt-10">
           <legend className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 text-left">
             Mini Projects
           </legend>

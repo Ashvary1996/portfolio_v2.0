@@ -50,7 +50,7 @@
   --color-primary-500: oklch(0.84 0.18 117.33);
   --spacing: 0.25rem;
 }
- 
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -129,10 +129,31 @@
   }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 html {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
+}
+
+/* -------- */
+
+/******** Custom Scrollbar ********/
+
+/* Style vertical scrollbar only */
+::-webkit-scrollbar {
+  width: 6px; /* 👈 vertical width */
+  height: 0px; /* 👈 removes horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(237, 4, 4, 0.783);
+  border-radius: 20px;
+  cursor: pointer; 
 }

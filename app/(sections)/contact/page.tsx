@@ -125,8 +125,9 @@ function Contact() {
 
   return (
     <section
+    data-aos="zoom-in"
       id="contact"
-      className="mt-10 min-h-screen  px-4 sm:px-6 lg:px-8 bg-background text-foreground scroll-mt-18 m-2
+      className="mt-10 min-h-screen  px-4 sm:px-6 lg:px-8   text-foreground scroll-mt-18 m-2
    
       "
       //     border-5 border-green-800
@@ -150,7 +151,8 @@ function Contact() {
           </div>
 
           {/* Main Card */}
-          <div className="rounded-2xl      shadow-xl overflow-hidden ">
+          <div className="rounded-2xl   shadow-xl overflow-hidden ">
+         
             <div className="flex flex-col lg:flex-row ">
               {/* ── Left Panel: Get in Touch ── */}
 

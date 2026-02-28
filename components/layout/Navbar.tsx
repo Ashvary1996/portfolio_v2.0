@@ -1,7 +1,7 @@
 "use client";
 import FloatingDockPortfolioMENU from "@/components/floating-dock-demo";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"; 
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { ScrollProgress } from "../ui/scroll-progress";
 
 function Navbar() {
@@ -16,15 +16,10 @@ function Navbar() {
     >
       {/* LEFT — Name */}
       <div className="flex-1 flex items-center">
-        <h2
-          className="text-base sm:text-lg md:text-xl font-bold tracking-widest uppercase
-          text-neutral-800 dark:text-neutral-100
-          whitespace-nowrap select-none
-            from-neutral-900 to-neutral-500
-          dark:from-white dark:to-neutral-400
-          bg-clip-text  "
-        >
-          {"<ASHVARY GIDIAN/>"}
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wider uppercase whitespace-nowrap select-none">
+          <span className="font-extrabold text-gray-600 dark:text-white">
+            &lt;ASHVARY/&gt;
+          </span>
         </h2>
       </div>
 

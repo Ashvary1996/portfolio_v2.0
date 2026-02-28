@@ -49,6 +49,7 @@ const sellerPunditTechStack = [
 
 const Experience = () => (
   <section
+  data-aos="flip-up"
     id="experiences"
     className="min-h-screen py-12   relative overflow-hidden scroll-mt-10"
     // style={{

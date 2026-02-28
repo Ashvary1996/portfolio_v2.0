@@ -1,21 +1,26 @@
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/app/(sections)/hero/page";
-import Skill from "./(sections)/skills/page";
-import Contact from "./(sections)/contact/page";
-import Experience from "./(sections)/experience/page";
-import Projects from "./(sections)/projects/page";
-import Footer from "@/components/layout/Footer";
+import HomeClient from "./HomeClient";
 
-export default function Home() {
+export const metadata = {
+  title: "Ashvary Gidian | Full Stack Developer Portfolio",
+  description: "Welcome to Ashvary Gidian's Portfolio website.",
+};
+
+export default function Page() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Skill />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+      <HomeClient />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Ashvary Gidian",
+            url: "https://yourdomain.com",
+            jobTitle: "Full Stack Developer",
+          }),
+        }}
+      />
     </>
   );
 }
