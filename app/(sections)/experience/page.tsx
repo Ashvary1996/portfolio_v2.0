@@ -77,7 +77,7 @@ const Experience = () => (
             <div className="flex flex-col lg:flex-row gap-6   bg-opacity-50 rounded-lg shadow-md p-6 md:p-8 transition-transform duration-500 hover:scale-105">
               <div className="lg:w-1/3">
                 <img
-                  src={"./viacertaHome"}
+                  src={"/project-images/mini-project/viacerta.webp"}
                   alt="Website Home Screenshot"
                   className="w-full h-40 md:h-52 lg:h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
                 />

@@ -12,17 +12,17 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center px-6 bg-linear-to-b from-background to-muted/30 scroll-mt-10  ">
-      
+    <section
+      id="home"
+      className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center px-6 bg-linear-to-b from-background to-muted/30 scroll-mt-10  "
+    >
       {/* Small Intro */}
       <p className="text-sm md:text-base text-muted-foreground mb-4 tracking-wide">
         👋 Hi, I'm
       </p>
 
       {/* Name */}
-      <h1 className="text-4xl md:text-6xl font-bold mb-6">
-        Ashvary Gidian
-      </h1>
+      <h1 className="text-4xl md:text-6xl font-bold mb-6">Ashvary Gidian</h1>
 
       {/* Animated Role */}
       <div className="text-xl md:text-3xl font-semibold mb-6">
@@ -32,13 +32,13 @@ export default function Hero() {
 
       {/* Short Tagline */}
       <p className="max-w-2xl text-muted-foreground text-sm md:text-lg mb-8">
-        I build modern, scalable and user-focused web applications that 
-        simplify complex problems and deliver smooth digital experiences.
+        I build modern and responsive web applications using clean, maintainable
+        code.
       </p>
 
       {/* About Section */}
 
-      <AboutSection/>
+      <AboutSection />
     </section>
   );
 }

@@ -79,7 +79,7 @@ export const Particles: React.FC<ParticlesProps> = ({
   const mousePosition = useMousePosition()
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number|null>(null)
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
 
   useEffect(() => {
@@ -264,7 +264,8 @@ export const Particles: React.FC<ParticlesProps> = ({
         // update the circle position
       }
     })
-    animationRef.current = window.requestAnimationFrame(animate)
+    // animationRef.current = window.requestAnimationFrame(animate)
+    animationRef.current = requestAnimationFrame(animate)
   }
 
   return (

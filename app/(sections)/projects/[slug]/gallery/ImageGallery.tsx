@@ -41,22 +41,38 @@ export default function ImageGallery({ images }: Props) {
 
   return (
     <>
+     
       {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {images.map((img, index) => (
           <div
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className="cursor-pointer overflow-hidden rounded-xl"
+            className="group cursor-pointer bg-white dark:bg-neutral-900 rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
           >
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-60 object-cover hover:scale-105 transition duration-300"
-            />
-            <p className="text-center mt-2 text-sm text-gray-600">
-              {img.title}
-            </p>
+            <div className="relative overflow-hidden">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <span className="text-white text-sm tracking-wide">
+                  View Image
+                </span>
+              </div>
+            </div>
+
+            <div className="p-4 text-center">
+              <p className="text-sm text-gray-500">
+                {index + 1} / {images.length}
+              </p>
+              <h4 className="mt-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+                {img.title}
+              </h4>
+            </div>
           </div>
         ))}
       </div>
