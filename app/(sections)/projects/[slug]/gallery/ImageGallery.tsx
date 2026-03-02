@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
+import { useSwipeable } from "react-swipeable";
 type ImageType = {
   title: string;
   src: string;
@@ -39,9 +39,20 @@ export default function ImageGallery({ images }: Props) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [currentIndex]);
 
+  // //////////////////////////
+  //Mobile Touch Change
+  const handlers = useSwipeable({
+    onSwipedLeft: () => nextImage(),
+    onSwipedRight: () => prevImage(),
+    trackMouse: true, // optional: allows desktop drag
+    preventScrollOnSwipe: true, // this replaces preventDefaultTouchmoveEvent
+    delta: 50, // minimum swipe distance
+  });
+
+  // //////////////////////////
+
   return (
     <>
-     
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {images.map((img, index) => (
@@ -86,11 +97,14 @@ export default function ImageGallery({ images }: Props) {
           <div
             className="relative w-[90%] max-w-5xl flex items-center"
             onClick={(e) => e.stopPropagation()}
+            {...handlers}
           >
             {/* Left Arrow */}
             <button
-              onClick={prevImage}
-              className="absolute left-0 md:-left-14 text-white text-4xl px-4 cursor-pointer hover:scale-200 hover:text-gray-300 transition-all duration-300"
+              onClick={(e) => {
+                (prevImage(), e.currentTarget.blur());
+              }}
+              className="absolute left-0 md:-left-14 text-white text-4xl px-4 cursor-pointer hover:scale-200 hover:text-gray-300 transition-all duration-300 mix-blend-difference"
             >
               ❮
             </button>
@@ -112,8 +126,10 @@ export default function ImageGallery({ images }: Props) {
 
             {/* Right Arrow */}
             <button
-              onClick={nextImage}
-              className="absolute right-0 md:-right-14 text-white text-4xl px-4 cursor-pointer hover:scale-200 hover:text-gray-300 transition-all duration-300"
+              onClick={(e) => {
+                (nextImage(), e.currentTarget.blur());
+              }}
+              className="absolute right-0 md:-right-14 text-white text-4xl px-4 cursor-pointer hover:scale-200 hover:text-gray-300 transition-all duration-300 mix-blend-difference"
             >
               ❯
             </button>
@@ -121,7 +137,7 @@ export default function ImageGallery({ images }: Props) {
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute -top-5 right-0 text-white hover:text-red-500 text-3xl cursor-pointer"
+              className="absolute -top-5 right-0 text-white hover:text-red-500 text-3xl cursor-pointer mix-blend-difference"
             >
               ✕
             </button>

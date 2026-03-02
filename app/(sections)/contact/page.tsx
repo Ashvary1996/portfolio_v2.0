@@ -125,25 +125,28 @@ function Contact() {
 
   return (
     <section
-    data-aos="zoom-in"
+      data-aos="zoom-in"
       id="contact"
-      className="mt-10 min-h-screen  px-4 sm:px-6 lg:px-8   text-foreground scroll-mt-18 m-2
-   
-      "
-      //     border-5 border-green-800
+      // className="mt-10 min-h-screen px-4 sm:px-6 lg:px-8 text-foreground scroll-mt-18"
+      className="py-16 md:py-24 text-foreground scroll-mt-20"
     >
-      <fieldset className="border border-gray-300 rounded-lg p-10     ">
-        <legend className="text-3xl font-bold text-center   ">
-          <h2 className="text-4xl font-bold tracking-tight  text-foreground">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-6">
+          {" "}
+          Contact Me
+        </h2>
+
+        {/* <legend className="text-center mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
             Contact Me
           </h2>
-        </legend>
+        </legend> */}
 
         <div className="container mx-auto max-w-6xl">
           {/* Section Header */}
-          <div className="text-center mb-2">
-            <div className="mx-auto h-1 w-16 rounded-full bg-teal-500 mb-5" />
-            <p className="text-sm text-muted-foreground italic max-w-xl mx-auto leading-relaxed">
+          <div className="text-center mb-6">
+            <div className="mx-auto h-1 w-16 rounded-full bg-teal-500 mb-4" />
+            <p className="text-sm sm:text-base text-muted-foreground italic max-w-xl mx-auto leading-relaxed">
               Connect with me if you want to know more about me or my work, or
               if you would just like to say hello. I&apos;d love to hear from
               you.
@@ -151,47 +154,40 @@ function Contact() {
           </div>
 
           {/* Main Card */}
-          <div className="rounded-2xl   shadow-xl overflow-hidden ">
-         
-            <div className="flex flex-col lg:flex-row ">
-              {/* ── Left Panel: Get in Touch ── */}
-
-              <div className="w-full lg:w-1/3   bg-muted/40 dark:bg-muted/20 px-8 py-12 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-border ">
-                <h3 className="text-2xl font-semibold mb-8 text-foreground">
+          {/* <div className="rounded-2xl shadow-xl overflow-hidden"> */}
+          <div className="rounded-2xl shadow-xl overflow-hidden bg-background">
+            <div className="flex flex-col lg:flex-row">
+              {/* Left Panel */}
+              {/* <div className="w-full lg:w-1/3 bg-muted/40 dark:bg-muted/20 px-6 sm:px-8 py-8 sm:py-12 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-border"> */}
+              <div className="w-full lg:w-1/3 bg-muted/40 dark:bg-muted/20 px-6 sm:px-8 py-8 sm:py-12 flex flex-col items-center text-center border-b lg:border-b-0 lg:border-r border-border">
+                <h3 className="text-2xl font-semibold mb-6 sm:mb-8 text-foreground">
                   Get in Touch
                 </h3>
 
-                <ul className="space-y-5  ">
-                  {/* Location */}
-                  <li className="flex items-start gap-3 text-sm ">
+                <ul className="space-y-4 sm:space-y-5 text-sm sm:text-base">
+                  <li className="flex items-start gap-3">
                     <FaMapMarkerAlt
+                      className="mt-1 shrink-0 text-red-500"
                       size={18}
-                      className="mt-0.5 shrink-0 text-red-500"
                     />
                     <span>Chhindwara (M.P) INDIA</span>
                   </li>
-
-                  {/* Phone */}
-                  <li className="flex items-start gap-3 text-sm">
+                  <li className="flex items-start gap-3">
                     <FaPhone
+                      className="mt-1 shrink-0 text-teal-500"
                       size={17}
-                      className="mt-0.5 shrink-0 text-teal-500"
                     />
-
                     <a href="tel:+917000240904" className="hover:underline">
                       +91 7000240904
                     </a>
                   </li>
-
-                  {/* WhatsApp */}
-                  <li className="flex items-start gap-3 text-sm">
+                  <li className="flex items-start gap-3">
                     <FaWhatsapp
+                      className="mt-1 shrink-0 text-green-500"
                       size={18}
-                      className="mt-0.5 shrink-0 text-green-500"
                     />
-
                     <a
-                      href="https://wa.me/917000240904?text=Hi%20Ashvary,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you."
+                      href="https://wa.me/917000240904"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:underline"
@@ -199,20 +195,13 @@ function Contact() {
                       Chat on WhatsApp
                     </a>
                   </li>
-
-                  {/* Email */}
-                  <li className="flex items-start gap-3 text-sm">
+                  <li className="flex items-start gap-3">
                     <FaEnvelope
+                      className="mt-1 shrink-0 text-orange-400"
                       size={17}
-                      className="mt-0.5 shrink-0 text-orange-400"
                     />
-
                     <a
-                      href={`mailto:ashvarygidian1996@gmail.com?subject=${encodeURIComponent(
-                        "Connect & Discussion | Portfolio Enquiry",
-                      )}&body=${encodeURIComponent(
-                        "Hi Ashvary,\n\nI’m reaching out to connect with you.\n\n[Please replace this line with your query or the reason for contacting.]\n\nBest regards,",
-                      )}`}
+                      href="mailto:ashvarygidian1996@gmail.com"
                       className="hover:text-blue-400 transition-colors duration-300"
                     >
                       ashvarygidian1996@gmail.com
@@ -221,65 +210,53 @@ function Contact() {
                 </ul>
 
                 {/* Social Icons */}
-                <div className="flex items-center gap-3 mt-10">
-                  {/* GitHub */}
+                <div className="flex flex-wrap justify-center items-center gap-3 mt-6 sm:mt-10">
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      
-                        <a
-                          href="https://github.com/Ashvary1996"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-gray-600 hover:text-black  transition duration-300 hover:scale-150 dark:hover:text-gray-500"
-                        >
-                          <FaGithub   size={30} />
-                        </a>
-                      
+                      <a
+                        href="https://github.com/Ashvary1996"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-gray-600 hover:text-black transition duration-300 hover:scale-125 dark:hover:text-gray-500"
+                      >
+                        <FaGithub size={28} />
+                      </a>
                     </TooltipTrigger>
                     <TooltipContent>GitHub</TooltipContent>
                   </Tooltip>
-
-                  {/* LinkedIn */}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                     
-                        <a
-                          href="https://www.linkedin.com/in/ashvary-gidian/"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-blue-500   hover:text-blue-500 transition duration-300 hover:scale-150 "
-                        >
-                          <FaLinkedin size={30} />
-                        </a>
-                      
+                      <a
+                        href="https://www.linkedin.com/in/ashvary-gidian/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-blue-500 hover:scale-125 transition duration-300"
+                      >
+                        <FaLinkedin size={28} />
+                      </a>
                     </TooltipTrigger>
                     <TooltipContent>LinkedIn</TooltipContent>
                   </Tooltip>
-
-                  {/* Gmail */}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      
-                        <a
-                          href="https://mail.google.com/mail/?view=cm&fs=1&to=ashvarygidian1996@gmail.com&su=Connect%20%26%20Discussion%20%7C%20Portfolio%20Enquiry&body=Hi%20Ashvary,%20I%E2%80%99m%20reaching%20out%20to%20connect%20with%20you.%20%5BPlease%20replace%20this%20line%20with%20your%20query%20or%20the%20reason%20for%20contacting.%5D%20Best%20regards,"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-orange-500 transition duration-300 hover:scale-150 dark:text-gray-400 dark:hover:text-orange-500"
-                        >
-                          <FaEnvelope size={30} />
-                        </a>
-                       
+                      <a
+                        href="mailto:ashvarygidian1996@gmail.com"
+                        className="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-500 transition duration-300 hover:scale-125"
+                      >
+                        <FaEnvelope size={28} />
+                      </a>
                     </TooltipTrigger>
                     <TooltipContent>Gmail</TooltipContent>
                   </Tooltip>
                 </div>
               </div>
 
-              {/* ── Right Panel: Contact Form wrapped in MagicCard ── */}
-              <div className="w-full lg:w-2/3   p-8 md:p-12">
+              {/* Right Panel: Contact Form */}
+              {/* <div className="w-full lg:w-2/3 px-4 sm:px-6 md:px-8 py-6 sm:py-12 flex justify-center"> */}
+              <div className="w-full lg:w-2/3  sm:px-8 py-8 sm:py-12 flex justify-center">
                 <MagicCard
-                  className="rounded-xl p-6 md:p-8"
-                  gradientColor="rgba(20,184,166,0.12)" /* teal-500 at low opacity */
+                  className="w-full max-w-lg rounded-xl p-6 sm:p-8"
+                  gradientColor="rgba(20,184,166,0.12)"
                 >
                   <form
                     onSubmit={handleSubmit}
@@ -302,14 +279,7 @@ function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="Let me know who's talking..."
-                        className="
-                        w-full px-4 py-2.5 text-sm rounded-lg
-                        border border-input
-                        bg-background text-foreground
-                        placeholder:text-muted-foreground
-                        focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent
-                        transition-all duration-200
-                      "
+                        className="w-full px-4 py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200"
                       />
                       {errors.name && (
                         <p className="text-red-500 text-xs mt-1">
@@ -334,14 +304,7 @@ function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="Where can I reach you?"
-                        className="
-                        w-full px-4 py-2.5 text-sm rounded-lg
-                        border border-input
-                        bg-background text-foreground
-                        placeholder:text-muted-foreground
-                        focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent
-                        transition-all duration-200
-                      "
+                        className="w-full px-4 py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200"
                       />
                       {errors.email && (
                         <p className="text-red-500 text-xs mt-1">
@@ -369,14 +332,7 @@ function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="What's this about?"
-                        className="
-                        w-full px-4 py-2.5 text-sm rounded-lg
-                        border border-input
-                        bg-background text-foreground
-                        placeholder:text-muted-foreground
-                        focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent
-                        transition-all duration-200
-                      "
+                        className="w-full px-4 py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200"
                       />
                       {errors.subject && (
                         <p className="text-red-500 text-xs mt-1">
@@ -401,14 +357,7 @@ function Contact() {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="
-                        w-full px-4 py-2.5 text-sm rounded-lg
-                        border border-input
-                        bg-background text-foreground
-                        placeholder:text-muted-foreground
-                        focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent
-                        resize-none transition-all duration-200
-                      "
+                        className="w-full px-4 py-2.5 text-sm sm:text-base rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none transition-all duration-200"
                       />
                       {errors.message && (
                         <p className="text-red-500 text-xs mt-1">
@@ -418,35 +367,10 @@ function Contact() {
                     </Field>
 
                     {/* Submit */}
-                    <div className="pt-1 flex justify-center">
-                      {/* <Button
-                        type="submit"
-                        disabled={!isFormValid || status === "loading"}
-                        className={` cursor-pointer
-    min-w-[150px] transition-all duration-300 text-white
-     ${!isFormValid ? "bg-gray-400 cursor-not-allowed" : ""}
-    ${isFormValid && status === "idle" && "bg-teal-600 hover:bg-teal-700"}
-    ${status === "loading" && "bg-gray-500 cursor-not-allowed"}
-    ${status === "success" && "bg-green-600"}
-    ${status === "error" && "bg-red-600"}
-  `}
-                      >
-                        {status === "loading" && "Sending..."}
-                        {status === "success" && "Sent ✓"}
-                        {status === "error" && "Failed ✕"}
-                        {status === "idle" && "Send Message"}
-                      </Button> */}
-
+                    <div className="pt-2 flex justify-center">
                       <Button
                         type="submit"
-                        // disabled={!isFormValid || status === "loading"}
-                        className="
-    min-w-[150px] text-white transition-all duration-300
-    bg-teal-600 hover:bg-teal-700
-    disabled:bg-gray-400
-    disabled:cursor-not-allowed
-    disabled:hover:bg-gray-400 cursor-pointer
-  "
+                        className="min-w-[150px] text-white bg-teal-600 hover:bg-teal-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300"
                       >
                         {status === "loading" && "Sending..."}
                         {status === "success" && "Sent ✓"}
@@ -460,7 +384,7 @@ function Contact() {
             </div>
           </div>
         </div>
-      </fieldset>
+      </div>
     </section>
   );
 }

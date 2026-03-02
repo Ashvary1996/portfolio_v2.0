@@ -17,8 +17,8 @@ export default function ResumeViewer() {
       {/* Floating Actions */}
       <div className="  top-6 right-8  z-20 flex justify-end gap-2 ">
         <a
-          href="/resume/Ashvary_Gidian_Resume.pdf"
-          download
+          href="/resume/ashvary-gidian-resume.pdf"
+          download="Ashvary_Gidian_Resume_2026.pdf"
           className="px-3 py-1.5 text-sm rounded-md bg-white/90 hover:bg-white text-black backdrop-blur shadow"
           title="Download Resume"
         >
@@ -36,7 +36,7 @@ export default function ResumeViewer() {
 
       {/* PDF */}
       <iframe
-        src="/resume/Ashvary_Gidian_Resume.pdf"
+        src="/resume/ashvary-gidian-resume.pdf"
         className="w-full h-full"
         loading="lazy"
         title="Ashvary Gidian Resume"

@@ -23,7 +23,7 @@ export default function ResumeModal({ open, setOpen }: Props) {
         {/* PDF Viewer */}
         <div className="flex-1 h-full border-t">
           <iframe
-            src="/resume/Ashvary_Gidian_Resume.pdf"
+            src="/resume/ashvary-gidian-resume.pdf"
             className="w-full h-full"
             loading="lazy"
             title="Ashvary Gidian Resume"
@@ -33,15 +33,17 @@ export default function ResumeModal({ open, setOpen }: Props) {
         {/* Footer Actions */}
         <div className="flex justify-between items-center px-6 py-4 border-t bg-muted/30">
           <button
-            onClick={() => window.open("/resume", "_blank")}
+            onClick={() =>
+              window.open("/resume/", "_blank")
+            }
             className="text-sm underline cursor-pointer"
           >
             Open Full Page
           </button>
 
           <a
-            href="/resume/Ashvary_Gidian_Resume.pdf"
-            download
+            href="/resume/ashvary-gidian-resume.pdf"
+            download="Ashvary_Gidian_Resume_2026.pdf"
             className="px-4 py-2 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm"
           >
             Download PDF

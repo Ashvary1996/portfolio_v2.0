@@ -39,9 +39,9 @@ export const majorProjects: Project[] = [
       "A React-based flashcard generator application that allows users to create, manage, download, and print flashcards with validation and local storage support.",
     content: `
     <p>The project addressed the need for a user-friendly application to simplify the creation and management of flashcards efficiently. It was developed using a combination of technologies such as <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Tailwind CSS</strong>, <strong>Redux Toolkit</strong>, <strong>Formik</strong>, <strong>jspdf</strong>, <strong>yup</strong>, and <strong>react-router-dom</strong> to ensure robust functionality.</p>
-
+<br/>
     <p>The application facilitates intuitive creation and access to flashcards, supporting features such as text and image card creation, sharing options, download capabilities, deletion functionality, and print support for enhanced usability.</p>
-
+<br/>
     <p>To further enhance project efficiency, <strong>Agile methodology</strong> was employed, with <strong>React</strong>, <strong>React-Redux</strong>, and <strong>localStorage</strong> used for data management, <strong>React Router</strong> for routing, and <strong>Tailwind CSS</strong> for responsive component development. Input validation with <strong>Formik.js</strong> helped streamline user interactions, ensuring a smooth and reliable user experience.</p>
   `,
     duration: {
@@ -194,11 +194,11 @@ export const majorProjects: Project[] = [
     ],
     content: `
         <p>The Red Bus app is a user-friendly platform designed to simplify bus ticketing. Users can easily search, book, and manage tickets. The app was developed using an agile methodology for efficient design and development.</p>
-        
+        <br/>
         <p>The frontend is built with <strong>ReactJS</strong> and <strong>Tailwind CSS</strong> for a sleek, responsive interface, while <strong>React-Redux</strong> ensures smooth state management.</p>
-        
+        <br/>
         <p>On the backend, <strong>Node.js</strong> and <strong>MongoDB</strong> provide a scalable infrastructure, with <strong>Stripe</strong> integrated for secure payment processing.</p>
-    
+    <br/>
         <h3 class="text-xl font-semibold mt-4">Key Features:</h3>
         <ul class="list-disc pl-5">
           <li><strong>Bus Search & Booking:</strong> Easily search for buses and select seats.</li>
@@ -216,13 +216,13 @@ export const majorProjects: Project[] = [
       "A full-stack e-commerce web application with authentication, product management, cart system, and Razorpay payment integration. Includes a multi-step checkout process and an admin dashboard for managing products, users, and orders.",
     content: `
     <p>The project addressed the demand for a user-friendly e-commerce application by streamlining the browsing, purchasing, and management of products to enhance the shopping experience. Developed using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Tailwind CSS</strong>, <strong>Redux Toolkit</strong>, <strong>NodeMailer</strong>, <strong>React-Router</strong>, <strong>Formik</strong>, and <strong>Yup</strong>, the platform offers a comprehensive solution for customers. It features easy navigation, secure transactions, and efficient product management.</p>
-
+    <br/>
     <p>The platform includes advanced functionalities such as product search, cart management, order placement, and a seamless checkout process to ensure user satisfaction. Additionally, a responsive user interface was crafted to ensure optimal performance and visual appeal across various devices, prioritizing accessibility and ease of use for all customers. The application was designed to handle both the customer and admin sides of the platform efficiently.</p>
-
+<br/>
     <p>On the frontend, the application is powered by <strong>React</strong>, providing a dynamic, responsive interface, while <strong>Tailwind CSS</strong> is used for sleek and responsive styling. For state management, <strong>Redux Toolkit</strong> ensures smooth and efficient navigation across the app. On the backend, secure transactions are facilitated through the integration of <strong>NodeMailer</strong>, while user authentication is handled using <strong>JWT (JSON Web Tokens)</strong>. Additionally, <strong>Razorpay</strong> has been integrated as the payment gateway for secure, seamless transactions.</p>
-
+<br/>
     <p>The platform also offers essential user management features, including <strong>user registration</strong>, <strong>login</strong>, and <strong>password reset</strong> functionalities. Users can easily register an account, log in securely, and reset their passwords whenever needed, ensuring a smooth user experience throughout the platform.</p>
-
+<br/>
     <p>In the administrative dashboard, the platform provides admins with the ability to manage products, monitor orders, and moderate user reviews. Admins can easily add new products, update existing listings, and keep track of customer feedback. With this robust feature set, the application aims to deliver a comprehensive, secure, and user-friendly e-commerce experience.</p>
   `,
     duration: {
@@ -376,19 +376,19 @@ export const majorProjects: Project[] = [
       "Tripzy-AI is an AI-powered travel planning web application that allows users to generate personalized trip itineraries through a natural conversational chatbot. Powered by Ai, it provides hotel recommendations, day-by-day travel plans, Google Maps integration, and an interactive 3D globe visualization. Users can securely manage and store trips in the cloud with Clerk authentication and MongoDB.",
     content: `
   <p>Tripzy-AI is an AI-powered travel planning web application designed to simplify and automate the process of organizing trips through natural conversation. Instead of manually searching for destinations, hotels, and activities, users can interact with an intelligent travel assistant powered by <strong>Google Gemini  </strong> and <strong>LangChain</strong> to generate personalized travel plans within seconds.</p>
-
+<br/>
   <p>The application provides complete end-to-end trip planning, including destination suggestions, curated hotel recommendations based on budget and group size, and fully structured day-by-day itineraries. By leveraging conversational AI, Tripzy-AI transforms complex travel planning into a seamless chat-based experience.</p>
-
+<br/>
   <p>On the frontend, the platform is built using <strong>Next.js </strong>, <strong>React</strong>, and <strong>TypeScript</strong> to ensure scalability and type safety. The UI is styled using <strong>Tailwind CSS</strong>, <strong>Shadcn UI</strong>, and <strong>Aceternity UI</strong>, delivering a modern, responsive, and dark-mode-enabled interface optimized for all devices.</p>
-
+<br/>
   <p>
   To enhance user engagement, an interactive <strong>3D globe visualization</strong> was implemented using <strong>Aceternity UI</strong>, allowing users to interact with it while generating their trip.
 </p> Additionally, hotel recommendations include detailed information with <strong>Google Maps integration</strong> and direct location access.</p>
-
+<br/>
   <p>On the backend, <strong>Next.js API Routes</strong> handle AI communication and trip processing. Trip data is securely stored in <strong>MongoDB</strong> using <strong>Mongoose</strong>, enabling users to save, manage, and revisit their travel plans. Secure authentication and session management are implemented using <strong>Clerk</strong>, ensuring protected access to user-specific trip data.</p>
-
+<br/>
   <p>To maintain production-level reliability, <strong>Arcjet</strong> was integrated for rate limiting to prevent abuse of AI endpoints. The entire application is deployed on <strong>Vercel</strong>, providing optimized performance and global availability.</p>
-
+<br/>
   <p>Overall, Tripzy-AI demonstrates the integration of modern web technologies, AI orchestration, secure authentication, database management, and interactive 3D graphics into a cohesive, production-ready travel planning platform.</p>
 `,
     duration: {

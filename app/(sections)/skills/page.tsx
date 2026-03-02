@@ -24,9 +24,13 @@ import {
   SiSocketdotio,
   SiJsonwebtokens,
   SiVultr,
+  SiBabelio,
+  SiVercel,
 } from "react-icons/si";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
+import { Server } from "lucide-react";
 
 export default function SkillsAnimatedBeam() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,14 +67,14 @@ export default function SkillsAnimatedBeam() {
 
         <div className="relative z-10 gap-10 grid grid-cols-1 md:grid-cols-3 w-[80%] sm:w-[80%] lg:w-[90%]">
           {/* Frontend */}
-          <div className="rounded-2xl shadow-xl md:bg-black/70 p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 hover:shadow-indigo-400  dark:hover:bg-gray-800  bg-gray-700 dark:bg-gray-700 md:dark:bg-gray-700/40" >
+          <div className="rounded-2xl shadow-xl md:bg-black/70 p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 hover:shadow-indigo-400  dark:hover:bg-gray-800  bg-gray-700 dark:bg-gray-800 md:dark:bg-gray-700/40">
             <h3
               ref={frontRef}
               className="font-bold text-xl mb-6 text-indigo-400 text-center border-b-2 border-indigo-400 p-2 w-fit m-auto"
             >
               Frontend
             </h3>
-            <ul className="space-y-3 text-gray-300 text-sm flex flex-col w-30 m-auto">
+            <ul className="text-gray-300 text-sm w-fit mx-auto space-y-3">
               <li className="flex items-center gap-2">
                 <FaHtml5 className="text-orange-400" /> HTML5
               </li>
@@ -84,29 +88,29 @@ export default function SkillsAnimatedBeam() {
                 <FaReact className="text-cyan-400" /> React
               </li>
               <li className="flex items-center gap-2">
-                <SiTailwindcss className="text-teal-400" /> Tailwind
+                <SiTailwindcss className="text-teal-400" /> Tailwind CSS
               </li>
               <li className="flex items-center gap-2">
-                <SiRedux className="text-purple-500" /> Redux
+                <SiRedux className="text-purple-500" /> Redux (Redux Toolkit)
               </li>
               <li className="flex items-center gap-2">
-                <SiTypescript className="text-blue-500" /> TypeScript
+                <SiTypescript className="text-blue-500" /> TypeScript (Basic)
               </li>
               <li className="flex items-center gap-2">
-                <SiNextdotjs /> Next.js
+                <SiNextdotjs /> Next.js (Basic)
               </li>
             </ul>
           </div>
 
           {/* Backend */}
-          <div className="rounded-2xl shadow-xl  p-6   hover:bg-gray-800 transition duration-300 hover:-translate-y-2 hover:shadow-purple-400 dark:hover:bg-gray-800 md:bg-black/70 bg-gray-700 dark:bg-gray-700 md:dark:bg-gray-700/40">
+          <div className="rounded-2xl shadow-xl  p-6   hover:bg-gray-800 transition duration-300 hover:-translate-y-2 hover:shadow-purple-400 dark:hover:bg-gray-800 md:bg-black/70 bg-gray-700 dark:bg-gray-800 md:dark:bg-gray-700/40">
             <h3
               ref={backRef}
               className="font-bold text-xl mb-6 text-purple-400 text-center border-b-2 border-purple-400 p-2 w-fit m-auto"
             >
               Backend
             </h3>
-            <ul className="space-y-3 text-gray-300 text-sm flex flex-col w-30 m-auto">
+            <ul className="text-gray-300 text-sm w-fit mx-auto space-y-3">
               <li className="flex items-center gap-2">
                 <FaNodeJs className="text-green-400" /> Node.js
               </li>
@@ -117,7 +121,21 @@ export default function SkillsAnimatedBeam() {
                 <FaDatabase /> MongoDB
               </li>
               <li className="flex items-center gap-2">
+                <Image
+                  width={100}
+                  height={100}
+                  src={"/project-images/mini-project/rest-api.webp"}
+                  alt="REST API"
+                  className="w-4 h-5"
+                />
+                RESTful API
+              </li>
+
+              <li className="flex items-center gap-2">
                 <SiJsonwebtokens className="text-red-500" /> JWT
+              </li>
+              <li className="flex items-center gap-2">
+                <SiBabelio className="text-red-500" /> Bcrypt
               </li>
               <li className="flex items-center gap-2">
                 <SiRedis className="text-red-600" /> Redis
@@ -126,42 +144,51 @@ export default function SkillsAnimatedBeam() {
                 <SiSocketdotio /> Socket.io
               </li>
               <li className="flex items-center gap-2">
-                <SiGoogle className="text-blue-400" /> Google APIs
+                <SiGoogle className="text-blue-400" /> Google APIs and Services
+              </li>
+              <li className="flex items-center gap-2">
+                <Server size={15} className="text-blue-400" />
+                SSE (Server-Sent Events)
               </li>
             </ul>
           </div>
 
           {/* Tools */}
-          <div className="rounded-2xl shadow-xl bg-black/70 p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 purple-400 md:dark:bg-gray-700/40 dark:bg-gray-700 hover:shadow-pink-400 dark:hover:bg-gray-800 ">
+          <div className="rounded-2xl shadow-xl   p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 purple-400 md:dark:bg-gray-700/40 dark:bg-gray-800 hover:shadow-pink-400 dark:hover:bg-gray-800 bg-gray-700 ">
             <h3
               ref={otherRef}
               className="font-bold text-xl mb-6 text-pink-400 text-center border-b-2 border-pink-400 p-2 w-fit m-auto"
             >
               Tools & Platforms
             </h3>
-            <ul className="space-y-3 text-gray-300 text-sm max-w-xs mx-auto w-30 m-auto">
+            <ul className="text-gray-300 text-sm w-fit mx-auto space-y-3">
               <li className="flex items-center gap-3">
                 <FaGit className="text-red-400 w-5 h-5 shrink-0" />
-                <span>Git</span>
+                <span>Git (Version Control)</span>
               </li>
               <li className="flex items-center gap-3">
                 <SiNetlify className="text-cyan-400 w-5 h-5 shrink-0" />
-                <span>Netlify</span>
+                <span>Netlify (Deployment)</span>
+
               </li>
               <li className="flex items-center gap-3">
-                <SiRender className="w-5 h-5 shrink-0" />
-                <span>Render</span>
+                <SiRender className="w-5 h-5 shrink-0  text-purple-400" />
+                <span>Render (Deployment)</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <SiVercel className="w-5 h-5 shrink-0 text-gray-500" />
+                <span>Vercel (Deployment)</span>
               </li>
               <li className="flex items-center gap-3">
                 <SiPostman className="text-orange-400 w-5 h-5 shrink-0" />
                 <span>Postman</span>
               </li>
               <li className="flex items-center gap-3">
-                <FaCloud className="text-blue-400 w-5 h-5 shrink-0" />
+                <FaCloud className="text-green-400 w-5 h-5 shrink-0" />
                 <span>MongoDB Atlas</span>
               </li>
               <li className="flex items-center gap-3">
-                <SiVultr className="w-5 h-5 shrink-0" />
+                <SiVultr className="w-5 h-5 shrink-0 text-blue-600" />
                 <span>VPS</span>
               </li>
             </ul>
@@ -176,7 +203,6 @@ export default function SkillsAnimatedBeam() {
           curvature={isMobile ? 0 : -80}
           duration={5} // slow, satisfying travel speed
           delay={0}
-         
         />
         <AnimatedBeam
           containerRef={containerRef}

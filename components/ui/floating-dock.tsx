@@ -19,7 +19,7 @@ import {
   useTransform,
 } from "motion/react";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const FloatingDock = ({
   items,
@@ -57,13 +57,34 @@ const FloatingDockMobile = ({
 }) => {
   const [open, setOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const dockRef = useRef<HTMLDivElement>(null);
+
+  // Close dock if click is outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dockRef.current && !dockRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     // <div className={cn("relative block md:hidden", className)}>
-    <div className={cn("fixed top-4 right-4 z-50 md:hidden ", className)}>
+    <div
+      ref={dockRef}
+      className={cn("fixed top-4 right-4 z-50 md:hidden ", className)}
+    >
       <AnimatePresence>
         {open && (
           <motion.div
             layoutId="nav"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
             // className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
             className="absolute right-0 top-full mt-2 flex flex-col gap-2 items-end bg-gray-600/30 p-2 rounded-4xl backdrop-blur-xl  shadow-lg shadow-black/10 dark:bg-white/30"
           >

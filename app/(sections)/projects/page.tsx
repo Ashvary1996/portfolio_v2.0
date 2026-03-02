@@ -98,22 +98,22 @@ const techIcons: Record<string, any> = {
 
 const Projects = () => {
   return (
-    <section id="projects">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section id="projects  ">
+      <div className="p-10 container mx-auto px-4">
+        <div className="text-center mb-5">
           <h2 className="text-3xl font-bold mb-2">Projects</h2>
           <p className="text-muted-foreground">
             A preview of some projects I worked on.
           </p>
         </div>
         {/* Major Projects */}
-        <fieldset
+        <div
           data-aos="flip-left"
-          className="border border-gray-300 rounded-lg p-6"
+          className="mt-5 p-1"
+          // className="border border-gray-300 rounded-lg p-6"
         >
-          <legend className="  text-2xl mb-6">Major Projects</legend>
-
-          <div className="space-y-12">
+          <h5 className="md:text-lg font-bold mb-6 ml-2">Major Projects</h5>
+          <div className="space-y-8 md:space-y-12">
             {majorProjects
               .sort((a, b) => b.id - a.id)
               .map((project, index) => {
@@ -121,9 +121,11 @@ const Projects = () => {
                 return (
                   <div
                     key={index}
-                    className={`flex flex-col md:flex-row items-stretch gap-8 border rounded-xl p-6 shadow-sm hover:shadow-lg transition 
-                   
-                  `} //     ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}
+                    className="flex flex-col md:flex-row gap-4 md:gap-8 rounded-xl p-4 md:p-6 bg-white/5 backdrop-blur-sm transition hover:shadow-lg"
+                    //   className={`flex flex-col md:flex-row items-stretch gap-8 border rounded-xl p-6 shadow-sm hover:shadow-lg transition
+
+                    // `}
+                    //     ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}
                   >
                     {/* LEFT - DESCRIPTION (50%) */}
                     <div className="w-full md:w-1/2 flex flex-col justify-between">
@@ -138,7 +140,7 @@ const Projects = () => {
                           </span>
 
                           <br />
-                          <span className="text-gray-600  text-sm">
+                          <span className="text-gray-600  text-sm dark:text-gray-500">
                             {project.links.live}
                           </span>
                         </div>
@@ -166,7 +168,7 @@ const Projects = () => {
                               <ImagesBadge
                                 text="View Image's"
                                 images={fImages}
-                                folderSize={{ width: 48, height: 36 }}
+                                folderSize={{ width: 45, height: 37 }}
                                 teaserImageSize={{ width: 40, height: 28 }}
                                 hoverImageSize={{ width: 140, height: 108 }}
                                 hoverTranslateY={-110}
@@ -178,7 +180,9 @@ const Projects = () => {
                             </Link>
                           </span>
                         </div>
-                        <div>{project.description}</div>
+                        <div className="m-2 text-sm font-semibold">
+                          {project.description}
+                        </div>
                         <div className="bg-muted/40 rounded-xl p-4">
                           <h4 className="font-semibold mb-3 text-lg">
                             Core Functionality
@@ -222,11 +226,27 @@ const Projects = () => {
                         className="w-full h-64 md:h-full object-contain transition ease-in-out duration-500 "
                       />
 
-                      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center   bg-black/50 backdrop-blur-sm opacity-0 hover:opacity-100  transition-all duration-300 ease-out p-6  ">
-                        <h4 className="text-white  text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center   ">
+                      <div 
+                      
+                      className="absolute inset-0 z-10 flex flex-col items-center justify-center transition-all duration-300 ease-out p-6 
+                       bg-black/90
+                       hover:bg-black/90 
+                          
+                       opacity-70 
+                       backdrop-blur-lg      
+                       hover:opacity-90
+                       md:backdrop-blur-sm 
+                       md:opacity-0 
+                       md:group-hover:opacity-90
+                      "
+                      
+                      >
+                        <h4 className="text-white  text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center  
+                       
+                        ">
                           {project.title}
                         </h4>
-                        <div className="flex flex-row sm:flex-row justify-center gap-4 my-4">
+                        <div className="text-white flex flex-row sm:flex-row justify-center gap-4 my-4">
                           <a
                             href={project.links.live}
                             target="_blank"
@@ -273,20 +293,14 @@ const Projects = () => {
                 );
               })}
           </div>
-        </fieldset>
+        </div>
 
         {/* Mini Projects Section */}
 
-        <fieldset
-          data-aos="flip-right"
-          data-aos-delay="200"
-          className="border border-gray-300 rounded-lg p-6 mt-10"
-        >
-          <legend className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 text-left">
-            Mini Projects
-          </legend>
+        <div data-aos="flip-right" data-aos-delay="200" className="mt-5 ">
+          <h3 className="md:text-lg font-bold mb-6 ml-2">Mini Projects</h3>
 
-          <div className="  p-4 flex flex-wrap justify-center   m-auto gap-10">
+          <div className="flex flex-wrap justify-center m-auto gap-10 p-5 md:p-2 ">
             {miniProjects.map((project, index) => (
               <div
                 key={index}
@@ -311,9 +325,10 @@ const Projects = () => {
                 {/* Hover Overlay */}
                 <div
                   className="absolute inset-0 flex flex-col justify-between p-4
-          bg-black/70 backdrop-blur-sm
-          opacity-0 group-hover:opacity-100
-          transition-opacity duration-300 ease-in-out"
+          bg-black/70 md:backdrop-blur-sm
+           group-hover:opacity-100
+          transition-opacity duration-300 ease-in-out 
+          opacity-90 md:opacity-0 md:group-hover:opacity-100"
                 >
                   {/* Description */}
                   <div className="flex-1 flex items-center justify-center text-center px-2">
@@ -345,7 +360,7 @@ const Projects = () => {
               </div>
             ))}
           </div>
-        </fieldset>
+        </div>
       </div>
     </section>
   );

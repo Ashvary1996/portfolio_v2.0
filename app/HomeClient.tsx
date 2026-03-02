@@ -10,13 +10,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Particles } from "@/components/ui/particles";
-
+import {isMobile} from "../lib/isMobile"
 export default function Home() {
   useEffect(() => {
     AOS.init({
       // once: true, // only animate once
       duration: 800, // animation duration
       easing: "ease-in-out",
+      disable: isMobile()
     });
   }, []);
 
