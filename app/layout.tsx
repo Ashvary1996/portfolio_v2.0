@@ -33,11 +33,18 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ashvary Gidian" }],
   creator: "Ashvary Gidian",
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://ashvarygidian.vercel.app/"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Ashvary Gidian | Full Stack Developer",
     description: "Portfolio of Ashvary Gidian - MERN Stack & Next.js Developer",
-    url: "https://yourdomain.com",
+    url: "https://ashvarygidian.vercel.app/",
     siteName: "Ashvary Portfolio",
     type: "website",
   },
@@ -50,9 +57,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-       <head>
+      <head>
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBFLE01JJT"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YBFLE01JJT"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `

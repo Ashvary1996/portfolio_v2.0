@@ -1,7 +1,7 @@
 # 👨‍💻 Ashvary Gidian | Full Stack Developer Portfolio
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=3B82F6&center=true&vCenter=true&width=435&lines=Full+Stack+Developer;React+%7C+Node.js+%7C+Next.js;Building+Modern+Web+Applications" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=3B82F6&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;React+%7C+Node.js+%7C+Next.js;Building+Modern+Web+Applications" alt="Typing SVG" />
 </p>
 
 <p align="center">

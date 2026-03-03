@@ -4,6 +4,10 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://yourdomain.com/sitemap.xml",
+  
+    sitemap: "https://ashvarygidian.vercel.app/sitemap.xml",
   };
 }
+
+
+// Which parts of your site search engines are allowed to crawl.
