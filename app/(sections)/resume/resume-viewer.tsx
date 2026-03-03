@@ -18,7 +18,7 @@ export default function ResumeViewer() {
       <div className="  top-6 right-8  z-20 flex justify-end gap-2 ">
         <a
           href="/resume/ashvary-gidian-resume.pdf"
-          download="Ashvary_Gidian_Resume_2026.pdf"
+          download="Ashvary-Gidian-Resume-2026.pdf" 
           className="px-3 py-1.5 text-sm rounded-md bg-white/90 hover:bg-white text-black backdrop-blur shadow"
           title="Download Resume"
         >

@@ -154,7 +154,7 @@ export default function SkillsAnimatedBeam() {
           </div>
 
           {/* Tools */}
-          <div className="rounded-2xl shadow-xl   p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 purple-400 md:dark:bg-gray-700/40 dark:bg-gray-800 hover:shadow-pink-400 dark:hover:bg-gray-800 bg-gray-700 ">
+          <div className="rounded-2xl shadow-xl   p-6 hover:bg-gray-800 transition duration-300 hover:-translate-y-2 purple-400 md:dark:bg-gray-700/40 dark:bg-gray-800 hover:shadow-pink-400 dark:hover:bg-gray-800 md:bg-black/70 bg-gray-700">
             <h3
               ref={otherRef}
               className="font-bold text-xl mb-6 text-pink-400 text-center border-b-2 border-pink-400 p-2 w-fit m-auto"

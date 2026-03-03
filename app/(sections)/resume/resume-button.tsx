@@ -10,8 +10,7 @@ export default function ResumeButton() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-    
+    <> 
         <button
             onClick={() => setOpen(true)}
             className="group relative p-2 rounded-xl

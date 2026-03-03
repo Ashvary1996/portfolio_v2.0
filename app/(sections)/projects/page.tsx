@@ -152,7 +152,7 @@ const Projects = () => {
                             target="_blank"
                             className="px-4 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700 transition"
                           >
-                            🌐 Go Live
+                            🌐 Visit Site
                           </a>
 
                           {project.links.demo && (

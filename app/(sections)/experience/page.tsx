@@ -165,11 +165,11 @@ const Experience = () => (
                 </h3>
 
                 {/* Tech Stack */}
-                <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2 mb-4">
+                <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2 mb-4 ">
                   {viacaetaTechStack.map(({ name, icon }) => (
                     <div
                       key={name}
-                      className="flex flex-col items-center p-1.5 rounded-md bg-gray-100 dark:bg-gray-200/20"
+                      className="flex flex-col items-center p-1.5 rounded-md bg-gray-100 dark:bg-gray-200/20 hover:bg-gray-400/50 dark:hover:bg-gray-400/50 "
                     >
                       <div className="text-lg text-teal-400">{icon}</div>
                       <span className="text-[10px] md:text-xs text-center">
@@ -201,7 +201,7 @@ const Experience = () => (
             {/* SellerPundit */}
             {/* <div className="flex-1    rounded-lg shadow-md transition-transform duration-500 hover:transform hover:scale-105 hover:shadow-lg mt-10 p-10"> */}
               {/* <div className="rounded-lg mt-6 md:mt-10 p-4 md:p-6 transition-all duration-300 py-16 md:py-20">  */}
-              <div className="rounded-lg mt-10 md:mt-16 p-6 md:p-8 transition-all duration-300 bg-white/5 hover:shadow-lg">
+              <div className="rounded-lg mt-10 md:mt-16 p-6 md:p-8 transition-all duration-300 bg-white/5 hover:shadow-lg ">
               <h3 className="text-lg md:text-2xl font-bold mb-3">
                 Intern - Software Developer | SellerPundit
                 <span className="block text-xs md:text-sm mt-1 text-gray-500">
