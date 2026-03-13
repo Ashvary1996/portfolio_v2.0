@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -13,6 +13,14 @@ type Props = {
 };
 
 export default function ResumeModal({ open, setOpen }: Props) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  const pdfSrc = isMobile
+    ? "https://drive.google.com/file/d/1b0ATnpptDrz7G1SRWC_R9aYIxS1cIzW2/preview"
+    : "/resume/ashvary-gidian-resume.pdf";
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="max-w-5xl h-[85vh] p-0 overflow-hidden">
@@ -22,8 +30,14 @@ export default function ResumeModal({ open, setOpen }: Props) {
 
         {/* PDF Viewer */}
         <div className="flex-1 h-full border-t">
-          <iframe
+          {/* <iframe
             src="/resume/ashvary-gidian-resume.pdf"
+            className="w-full h-full"
+            loading="lazy"
+            title="Ashvary Gidian Resume"
+          /> */}
+          <iframe
+            src={pdfSrc}
             className="w-full h-full"
             loading="lazy"
             title="Ashvary Gidian Resume"
@@ -41,7 +55,7 @@ export default function ResumeModal({ open, setOpen }: Props) {
 
           <a
             href="/resume/ashvary-gidian-resume.pdf"
-            download="Ashvary-Gidian-Resume-2026.pdf" 
+            download="Ashvary-Gidian-Resume-2026.pdf"
             className="px-4 py-2 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm"
             title="Download Ashvary Gidian's Resume"
           >

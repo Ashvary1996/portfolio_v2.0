@@ -112,7 +112,7 @@ const Projects = () => {
           className="mt-5 p-1"
           // className="border border-gray-300 rounded-lg p-6"
         >
-          <h5 className="md:text-lg font-bold mb-6 ml-2">Major Projects</h5>
+          {/* <h5 className="md:text-lg font-bold mb-6 ml-2">Major Projects</h5> */}
           <div className="space-y-8 md:space-y-12">
             {majorProjects
               .sort((a, b) => b.id - a.id)
@@ -298,7 +298,7 @@ const Projects = () => {
         {/* Mini Projects Section */}
 
         <div data-aos="flip-right" data-aos-delay="200" className="mt-5 ">
-          <h3 className="md:text-lg font-bold mb-6 ml-2">Mini Projects</h3>
+          <h3 className="md:text-lg font-semibold mb-6 ml-4">Mini Projects</h3>
 
           <div className="flex flex-wrap justify-center m-auto gap-10 p-5 md:p-2 ">
             {miniProjects.map((project, index) => (
