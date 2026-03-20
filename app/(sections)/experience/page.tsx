@@ -160,7 +160,7 @@ const Experience = () => (
               <h3 className="text-lg md:text-2xl font-bold mb-2">
                 Backend Developer | Viacerta Abroad
                 <span className="block text-xs md:text-sm mt-1 text-gray-500">
-                  March 2025 - June 10 2025
+                  March 2025 - July 2025
                 </span>
               </h3>
 
