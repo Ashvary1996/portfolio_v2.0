@@ -98,10 +98,10 @@ const techIcons: Record<string, any> = {
 
 const Projects = () => {
   return (
-    <section id="projects  ">
+    <section id="projects" className="scroll-mt-10">
       <div className="p-10 container mx-auto px-4">
         <div className="text-center mb-5">
-          <h2 className="text-3xl font-bold mb-2">Projects</h2>
+          <h2  id="projects" className="text-3xl font-bold mb-2">Projects</h2 >
           <p className="text-muted-foreground">
             A preview of some projects I worked on.
           </p>

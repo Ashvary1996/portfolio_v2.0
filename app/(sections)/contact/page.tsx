@@ -128,7 +128,7 @@ function Contact() {
       data-aos="zoom-in"
       id="contact"
       // className="mt-10 min-h-screen px-4 sm:px-6 lg:px-8 text-foreground scroll-mt-18"
-      className="py-16 md:py-24 text-foreground scroll-mt-20"
+      className="py-16 md:py-24 text-foreground scroll-mt-10"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-6">
