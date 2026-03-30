@@ -26,6 +26,9 @@ import {
   SiVultr,
   SiBabelio,
   SiVercel,
+  SiNginx,
+  SiDocker,
+  SiPm2,
 } from "react-icons/si";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { useRef, useEffect, useState } from "react";
@@ -169,7 +172,6 @@ export default function SkillsAnimatedBeam() {
               <li className="flex items-center gap-3">
                 <SiNetlify className="text-cyan-400 w-5 h-5 shrink-0" />
                 <span>Netlify (Deployment)</span>
-
               </li>
               <li className="flex items-center gap-3">
                 <SiRender className="w-5 h-5 shrink-0  text-purple-400" />
@@ -190,6 +192,18 @@ export default function SkillsAnimatedBeam() {
               <li className="flex items-center gap-3">
                 <SiVultr className="w-5 h-5 shrink-0 text-blue-600" />
                 <span>VPS</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <SiNginx className="text-green-500 w-5 h-5 shrink-0" />
+                <span>Nginx</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <SiDocker className="text-blue-400 w-5 h-5 shrink-0" />
+                <span>Docker (Basic)</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <SiPm2 className="text-teal-400 w-5 h-5 shrink-0" />
+                <span>PM2 (Process Management)</span>
               </li>
             </ul>
           </div>

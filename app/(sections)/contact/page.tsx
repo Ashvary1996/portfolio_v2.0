@@ -128,7 +128,9 @@ function Contact() {
       // className="mt-10 min-h-screen px-4 sm:px-6 lg:px-8 text-foreground scroll-mt-18"
       id="contact"
       className="py-16 md:py-24 text-foreground scroll-mt-5"
-      data-aos="zoom-in"
+      // data-aos="zoom-in"
+      data-aos="fade-up"
+      // data-aos-delay="200"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2

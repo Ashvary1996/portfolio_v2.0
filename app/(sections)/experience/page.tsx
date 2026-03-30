@@ -49,7 +49,7 @@ const sellerPunditTechStack = [
 
 const Experience = () => (
   <section
-    data-aos="flip-up"
+    data-aos="fade-up"
     id="experiences"
     // className="min-h-screen py-12 relative overflow-hidden scroll-mt-10"
     // className="py-8 md:py-12 relative overflow-hidden scroll-mt-10"
@@ -182,13 +182,24 @@ const Experience = () => (
               {/* Points */}
               <ul className="space-y-2">
                 {[
-                  "Backend Architecture for Viacerta Abroad",
-                  "REST APIs for blogs & courses",
-                  "Redis caching implementation",
-                  "Automated email workflows",
-                  "SSE & chatbot integration",
-                  "Lead tracking + Excel exports",
-                  "JWT auth & rate limiting",
+                  // "Backend Architecture for Viacerta Abroad",
+                  // "REST APIs for blogs & courses",
+                  // "Redis caching implementation",
+                  // "Automated email workflows",
+                  // "SSE & chatbot integration",
+                  // "Lead tracking + Excel exports",
+                  // "JWT auth & rate limiting",
+
+                  "Engineered backend architecture from scratch — Node.js & Express.js",
+                  "Built REST APIs powering features: blogs, courses, inquiries, support tickets",
+                  "JWT authentication + Google OAuth (Sign-in & Sheets integration)",
+                  "Role-based access control & route-level rate limiting",
+                  "Redis caching — reduced API response time from ~450ms to ~120ms",
+                  "Real-time communication via Socket.io & Server-Sent Events (SSE)",
+                  "Chatbot integration & support ticket management system",
+                  "Multiple dynamic email templates — welcome, verification, password reset, notifications",
+                  "Automated operational data pipelines via Google Sheets API — cut manual work by 70%",
+                  "Lead tracking system with Excel export for reporting",
                 ].map((item, index) => (
                   <li key={index} className="flex text-sm md:text-base">
                     <span className="text-teal-400 mr-2">▹</span>
@@ -224,10 +235,19 @@ const Experience = () => (
             </div>
             <ul className="space-y-2">
               {[
-                "Refactored MVC structure for improved scalability",
-                "Integrated Nodemailer for email automation",
-                "Implemented Excel import/export utilities",
-                "Streamlined codebase and fixed bugs",
+                // "Refactored MVC structure for improved scalability",
+                // "Integrated Nodemailer for email automation",
+                // "Implemented Excel import/export utilities",
+                // "Streamlined codebase and fixed bugs",
+
+                "Refactored a tangled codebase into clean MVC architecture — controllers, services & route files",
+                "Separated business logic from route handlers for better testability and maintainability",
+                "Nodemailer integration with automated email workflows — order updates, alerts & confirmations",
+                "Built Excel import/export utilities with ExcelJS — structured operational data for reporting",
+                "Identified and resolved duplicate product entries in scraped JSON data from eBay API",
+                "Added success/fail response logging to Excel — gave visibility into upload outcomes",
+                "Reduced unnecessary eBay API calls by filtering duplicates before submission",
+                "Debugged and stabilized scraping workflows that were silently failing in production",
               ].map((item, index) => (
                 <li
                   key={index}

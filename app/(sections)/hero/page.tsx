@@ -39,6 +39,7 @@ export default function Hero() {
     "netlify",
     "render",
     "nginx",
+    "docker",
     // Tools
     "git",
     "github",

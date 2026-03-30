@@ -108,7 +108,7 @@ const Projects = () => {
         </div>
         {/* Major Projects */}
         <div
-          data-aos="flip-left"
+          data-aos="fade-up"
           className="mt-5 p-1"
           // className="border border-gray-300 rounded-lg p-6"
         >
@@ -134,13 +134,13 @@ const Projects = () => {
                           {project.title}
                         </h3>
                         <div className="text-sm text-muted-foreground mb-4">
-                          <span className="font-semibold text-xs">
+                          <span className="font-gray-600 font-semibold">
                             {project.duration.startDate} -{" "}
                             {project.duration.endDate}
                           </span>
 
                           <br />
-                          <span className="text-gray-600  text-sm dark:text-gray-500">
+                          <span className="font-gray-600 font-semibold dark:text-gray-500">
                             {project.links.live}
                           </span>
                         </div>
@@ -180,7 +180,7 @@ const Projects = () => {
                             </Link>
                           </span>
                         </div>
-                        <div className="m-2 text-sm font-semibold">
+                        <div className="m-2 text-sm font-sans">
                           {project.description}
                         </div>
                         <div className="bg-muted/40 rounded-xl p-4">
@@ -297,7 +297,10 @@ const Projects = () => {
 
         {/* Mini Projects Section */}
 
-        <div data-aos="flip-right" data-aos-delay="200" className="mt-5 ">
+        <div 
+        // data-aos="flip-right" data-aos-delay="200" 
+        
+        className="mt-5 ">
           <h3 className="md:text-lg font-semibold mb-6 ml-4">Mini Projects</h3>
 
           <div className="flex flex-wrap justify-center m-auto gap-10 p-5 md:p-2 ">
