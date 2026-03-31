@@ -135,9 +135,23 @@
   mix-blend-mode: normal;
 }
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
+}
+html {
+  font-size: 16px;
 }
 
+@media (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
 /* -------- */
 
 /******** Custom Scrollbar ********/

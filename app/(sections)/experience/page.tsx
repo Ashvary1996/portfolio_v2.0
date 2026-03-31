@@ -53,14 +53,14 @@ const Experience = () => (
     id="experiences"
     // className="min-h-screen py-12 relative overflow-hidden scroll-mt-10"
     // className="py-8 md:py-12 relative overflow-hidden scroll-mt-10"
-    className="min-h-screen py-16 md:py-20 relative overflow-hidden scroll-mt-5 flex items-center"
+    className="min-h-screen py-16 md:py-20 relative overflow-hidden scroll-mt-5 flex items-center "
     // style={{
     //   backgroundImage: `url("https://i.gifer.com/4NB4.gif")`,
     //   backgroundSize: "cover",
     //   backgroundPosition: "center",
     // }}
   >
-    <div className="container mx-auto px-4 max-w-6xl ">
+    <div className="container mx-auto px-4 max-w-7xl ">
       {/* Header */}
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-2xl md:text-4xl font-bold mb-2">

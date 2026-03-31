@@ -127,14 +127,17 @@ function Contact() {
     <section
       // className="mt-10 min-h-screen px-4 sm:px-6 lg:px-8 text-foreground scroll-mt-18"
       id="contact"
-      className="py-16 md:py-24 text-foreground scroll-mt-5"
+      className="text-foreground scroll-mt-22"
       // data-aos="zoom-in"
-      data-aos="fade-up"
       // data-aos-delay="200"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        data-aos="fade-up"
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <h2
-          className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-6
+          className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-6 
+  bg-linear-to-r from-green-600 via-emerald-500  to-teal-400 bg-clip-text text-transparent
           "
         >
           Contact Me

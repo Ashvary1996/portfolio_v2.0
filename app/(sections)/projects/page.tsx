@@ -98,10 +98,11 @@ const techIcons: Record<string, any> = {
 
 const Projects = () => {
   return (
-    <section id="projects" className="scroll-mt-10">
-      <div className="p-10 container mx-auto px-4">
+    <section id="projects" className="scroll-mt-0  py-16 md:py-20">
+      <div className="p-10 container mx-auto px-4   max-w-7xl ">
         <div className="text-center mb-5">
-          <h2  id="projects" className="text-3xl font-bold mb-2">Projects</h2 >
+          <h2  id="projects" className="text-3xl font-bold mb-2 text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 bg-clip-text text-transparent"
+          >Projects</h2 >
           <p className="text-muted-foreground">
             A preview of some projects I worked on.
           </p>
@@ -301,7 +302,7 @@ const Projects = () => {
         // data-aos="flip-right" data-aos-delay="200" 
         
         className="mt-5 ">
-          <h3 className="md:text-lg font-semibold mb-6 ml-4">Mini Projects</h3>
+          <h3 className="md:text-lg  mb-6 ml-8 text-center text-xl font-bold">Mini Projects</h3>
 
           <div className="flex flex-wrap justify-center m-auto gap-10 p-5 md:p-2 ">
             {miniProjects.map((project, index) => (
