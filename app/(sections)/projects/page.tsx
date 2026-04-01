@@ -43,6 +43,8 @@ import {
   SiLangchain,
   SiGoogle,
   SiArc,
+  SiSocketdotio,
+  SiNodedotjs,
 } from "react-icons/si";
 // import restApiIcon from "@/data/thumbnail/restApi.png";
 import Image from "next/image";
@@ -50,6 +52,7 @@ import { ImagesBadge } from "@/components/ui/images-badge";
 import { GiOlive } from "react-icons/gi";
 import Link from "next/link";
 import { DiMongodb } from "react-icons/di";
+import { FaVideo } from "react-icons/fa6";
 
 const techIcons: Record<string, any> = {
   html: <FaHtml5 className="text-orange-400 " />,
@@ -94,6 +97,9 @@ const techIcons: Record<string, any> = {
   vercel: <SiVercel className="text-white" />,
   formik: <SiFormik className="text-blue-400" />,
   stripe: <SiStripe className="text-purple-400" />,
+  socketio: <SiSocketdotio className="text-orange-400" />,
+  nodejs: <SiNodedotjs className="text-green-400" />,
+  mongodb: <SiMongodb className="text-green-400" />,
 };
 
 const Projects = () => {
@@ -101,8 +107,12 @@ const Projects = () => {
     <section id="projects" className="scroll-mt-0  py-16 md:py-20">
       <div className="p-10 container mx-auto px-4   max-w-7xl ">
         <div className="text-center mb-5">
-          <h2  id="projects" className="text-3xl font-bold mb-2 text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 bg-clip-text text-transparent"
-          >Projects</h2 >
+          <h2
+            id="projects"
+            className="text-3xl font-bold mb-2 text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 bg-clip-text text-transparent"
+          >
+            Projects
+          </h2>
           <p className="text-muted-foreground">
             A preview of some projects I worked on.
           </p>
@@ -116,7 +126,8 @@ const Projects = () => {
           {/* <h5 className="md:text-lg font-bold mb-6 ml-2">Major Projects</h5> */}
           <div className="space-y-8 md:space-y-12">
             {majorProjects
-              .sort((a, b) => b.id - a.id)
+              // .sort((a, b) => b.id - a.id)
+              .sort((a, b) => a.order - b.order)
               .map((project, index) => {
                 const fImages = project.images?.map((img) => img.src) ?? [];
                 return (
@@ -148,39 +159,46 @@ const Projects = () => {
 
                         {/* Buttons */}
                         <div className="flex flex-wrap gap-3 m-2">
-                          <a
-                            href={project.links.live}
-                            target="_blank"
-                            className="px-4 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700 transition"
-                          >
-                            🌐 Visit Site
-                          </a>
+                          {project.links.live && (
+                            <a
+                              href={project.links.live}
+                              target="_blank"
+                              className="px-4 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700 transition"
+                            >
+                              🌐 Visit Site
+                            </a>
+                          )}
 
                           {project.links.demo && (
                             <a
-                              href="/demo-video"
+                              href={project.links.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="px-4 py-2 rounded-lg border text-sm hover:bg-muted transition"
                             >
                               🎥 Demo Video
                             </a>
                           )}
-                          <span>
-                            <Link href={`/projects/${project.slug}/gallery`}>
-                              <ImagesBadge
-                                text="View Image's"
-                                images={fImages}
-                                folderSize={{ width: 45, height: 37 }}
-                                teaserImageSize={{ width: 40, height: 28 }}
-                                hoverImageSize={{ width: 140, height: 108 }}
-                                hoverTranslateY={-110}
-                                hoverSpread={50}
-                                // href={`/projects/${project.slug}/gallery`}
-                                // target="_blank"
-                                //   target="_self"
-                              />
-                            </Link>
-                          </span>
+                          {fImages.length > 0 && (
+                            <span>
+                              <Link href={`/projects/${project.slug}/gallery`}>
+                                <ImagesBadge
+                                  text="View Image's"
+                                  images={fImages}
+                                  folderSize={{ width: 45, height: 37 }}
+                                  teaserImageSize={{ width: 40, height: 28 }}
+                                  hoverImageSize={{ width: 140, height: 108 }}
+                                  hoverTranslateY={-110}
+                                  hoverSpread={50}
+                                  // href={`/projects/${project.slug}/gallery`}
+                                  // target="_blank"
+                                  //   target="_self"
+                                />
+                              </Link>
+                            </span>
+                          )}
                         </div>
+
                         <div className="m-2 text-sm font-sans">
                           {project.description}
                         </div>
@@ -227,9 +245,8 @@ const Projects = () => {
                         className="w-full h-64 md:h-full object-contain transition ease-in-out duration-500 "
                       />
 
-                      <div 
-                      
-                      className="absolute inset-0 z-10 flex flex-col items-center justify-center transition-all duration-300 ease-out p-6 
+                      <div
+                        className="absolute inset-0 z-10 flex flex-col items-center justify-center transition-all duration-300 ease-out p-6 
                        bg-black/90
                        hover:bg-black/90 
                           
@@ -240,36 +257,58 @@ const Projects = () => {
                        md:opacity-0 
                        md:group-hover:opacity-90
                       "
-                      
                       >
-                        <h4 className="text-white  text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center  
+                        <h4
+                          className="text-white  text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center  
                        
-                        ">
+                        "
+                        >
                           {project.title}
                         </h4>
                         <div className="text-white flex flex-row sm:flex-row justify-center gap-4 my-4">
-                          <a
-                            href={project.links.live}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:text-sky-400   cursor-pointer"
-                          >
-                            <FaEye
-                              size={22}
-                              className="w-6 h-6 sm:w-7 sm:h-7"
-                            />
-                          </a>
-                          <a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:text-green-400"
-                          >
-                            <FaGithub
-                              size={22}
-                              className="w-6 h-6 sm:w-7 sm:h-7"
-                            />
-                          </a>
+                          {project.links.live && (
+                            <a
+                              href={project.links.live}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="hover:text-sky-400   cursor-pointer"
+                            >
+                              <FaEye
+                                title="Live"
+                                size={22}
+                                className="w-6 h-6 sm:w-7 sm:h-7"
+                              />
+                            </a>
+                          )}
+
+                          {project.links.github && (
+                            <a
+                              href={project.links.github}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="hover:text-green-400"
+                            >
+                              <FaGithub
+                                title="Code"
+                                size={22}
+                                className="w-6 h-6 sm:w-7 sm:h-7"
+                              />
+                            </a>
+                          )}
+                          {project.links.demo && (
+                            <a
+                              href={project.links.demo}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="hover:text-green-400"
+                            >
+                              <FaVideo
+                                title="Demo"
+                                size={22}
+                                className="w-6 h-6 sm:w-7 sm:h-7"
+                              />
+                            </a>
+                          )}
                         </div>
                         <div className="flex flex-wrap justify-center gap-2 mt-4 max-h-24 overflow-visible tech-stack-scroll">
                           {project.techStack?.map((tech) => (
@@ -298,11 +337,12 @@ const Projects = () => {
 
         {/* Mini Projects Section */}
 
-        <div 
-        // data-aos="flip-right" data-aos-delay="200" 
-        
-        className="mt-5 ">
-          <h3 className="md:text-lg  mb-6 ml-8 text-center text-xl font-bold">Mini Projects</h3>
+        <div
+          // data-aos="flip-right" data-aos-delay="200"
+
+          className="mt-5 "
+        >
+          {/* <h3 className="md:text-lg  mb-6 ml-8 text-center text-xl font-bold">Mini Projects</h3> */}
 
           <div className="flex flex-wrap justify-center m-auto gap-10 p-5 md:p-2 ">
             {miniProjects.map((project, index) => (

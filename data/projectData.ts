@@ -1,5 +1,6 @@
 export type Project = {
   id: number;
+  order: number;
   slug: string;
   title: string;
   tagline: string;
@@ -32,6 +33,7 @@ export type Project = {
 export const majorProjects: Project[] = [
   {
     id: 1,
+    order: 5,
     slug: "flashcard-generator",
     title: "Flashcard Generator",
     tagline: "Interactive flashcard creation app",
@@ -114,6 +116,7 @@ export const majorProjects: Project[] = [
 
   {
     id: 2,
+    order: 3,
     slug: "red-bus",
     title: "Red Bus",
     tagline: "Bus ticket booking web application",
@@ -171,15 +174,16 @@ export const majorProjects: Project[] = [
     links: {
       live: "https://red-bus-by-ashvary.netlify.app/",
       github: "https://github.com/Ashvary1996/RedBus",
+      demo: "https://drive.google.com/file/d/1pgv0SMutudGzkR4PHmj6mvkcZnsWf2Xa/view?usp=drive_link",
     },
 
     techStack: [
       "react",
       "tailwind",
-      "redux",
+      "redux-toolkit",
       "node-js",
       "express",
-      "mongo-db",
+      "mongodb",
       "stripe",
       "netlify",
       "render",
@@ -209,6 +213,7 @@ export const majorProjects: Project[] = [
   },
   {
     id: 3,
+    order: 2,
     slug: "e-com-app",
     title: "E-Commerce App",
     tagline: "Full-stack e-commerce platform with admin dashboard",
@@ -335,7 +340,7 @@ export const majorProjects: Project[] = [
 
     links: {
       live: "https://ecom-app-by-ashvary.netlify.app/",
-      // demo: "https://ecom-app-by-ashvary.netlify.app/",
+      demo: "https://drive.google.com/file/d/19jmegB9GKpr6Xjx0Eqq-fB_eItsMmNNy/view?usp=drive_link",
       github: "https://github.com/Ashvary1996/e-com-app",
     },
 
@@ -345,8 +350,8 @@ export const majorProjects: Project[] = [
       "redux-toolkit",
       "node-js",
       "express",
-      "mongo-db",
-      "monog-db-atlas",
+      "mongodb",
+      // "monog-db-atlas",
       "jwt",
       "razorpay",
       "nodemailer",
@@ -369,6 +374,7 @@ export const majorProjects: Project[] = [
   },
   {
     id: 4,
+    order: 1,
     slug: "tripzy-ai",
     title: "Tripzy-AI",
     tagline: "AI-Powered Trip Planner with 3D Globe & Chatbot",
@@ -443,7 +449,7 @@ export const majorProjects: Project[] = [
     links: {
       live: "https://tripzy-ai.vercel.app/",
       github: "https://github.com/Ashvary1996/TripzyAi",
-      // demo: "https://github.com/Ashvary1996/TripzyAi",
+      demo: "https://drive.google.com/file/d/1v3mBbF-fnfv7igH_t6v9MY7AJ6ub3O2f/view?usp=drive_link",
     },
 
     techStack: [
@@ -452,8 +458,7 @@ export const majorProjects: Project[] = [
       "typescript",
       "tailwind",
       "shadcn",
-      "aceternity",
-      "mongo-db",
+      "mongodb",
       "mongoose",
       "clerk",
       "langChain",
@@ -472,6 +477,55 @@ export const majorProjects: Project[] = [
       "Trip storage & management in MongoDB",
       "Rate limiting with Arcjet",
       "Dark mode & fully responsive design",
+    ],
+  },
+  {
+    id: 5,
+    order: 4,
+    slug: "real-time-chatbot-support-system",
+    title: "Real-Time Chatbot & Support System",
+    tagline: "Scalable real-time chat system with live support & admin control",
+
+    description: `Real-time chatbot and live support system built for seamless, scalable communication.
+Enables multiple one-on-one chat rooms with admin alerts, smart UI, and auto-managed sessions.
+Powered by Socket.io for fast, persistent, and reliable real-time interactions.`,
+
+    content: `A scalable real-time chatbot and live support system designed to handle multiple user conversations efficiently with seamless communication.
+
+It supports dynamic room creation, real-time messaging, and secure one-on-one interactions between users and support agents. The system ensures smooth handling of multiple chats simultaneously while maintaining performance and reliability.
+
+Advanced features like auto-closing inactive sessions, admin notifications, and persistent chat state enhance the overall user and support experience.`,
+
+    duration: {
+      startDate: "05 May 2025", 
+      endDate: "10 June 2025", 
+    },
+
+    status: "archived",
+
+    category: "fullstack",
+
+    thumbnail: "/project-images/chatbot/chat-thumbnail.webp",
+
+    images: [],
+
+    links: {
+      live: "",
+      demo: "https://drive.google.com/file/d/1aH1TcbSeSiMf2m1TAtAS8FOt_S4aigaC/view?usp=drive_link",
+      github: "",
+    },
+
+    techStack: ["react", "express", "tailwind", "nodejs", "socketio"],
+
+    features: [
+      "Real-time messaging using Socket.io",
+      "Multiple chat rooms with one-on-one communication",
+      "Secure room access for users and support agents",
+      "Admin notifications for new support requests",
+      "Auto-close chats if no agent joins within 5 minutes",
+      "Manual control to open/close chat sessions",
+      "Persistent chat sessions after refresh",
+      "Support dashboard to manage active chats",
     ],
   },
 ];
@@ -515,6 +569,7 @@ export const miniProjects = [
 const archievedProjects: Project[] = [
   {
     id: 5,
+    order: 9,
     slug: "book-my-show",
     title: "BookMyShow",
     tagline: "Movie ticket booking application",
