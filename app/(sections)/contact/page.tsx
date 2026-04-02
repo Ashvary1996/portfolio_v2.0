@@ -133,6 +133,7 @@ function Contact() {
     >
       <div
         data-aos="fade-up"
+        data-aos-once="true"
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <h2
