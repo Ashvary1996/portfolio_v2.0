@@ -77,17 +77,18 @@ function Contact() {
       });
 
       const result = await res.json();
+      // console.log(result);
       if (!result.success) {
         throw new Error(result.error);
       }
-      // console.log( result );
+
       setStatus("success");
       setTimeout(() => setStatus("idle"), 3000);
 
       console.log("Form submitted ✅");
-      // console.log("Email sent successfully:", result.data);
+      console.log(result.message);
 
-      toast.success("Email Sent Successfully", {
+      toast.success(`Email Sent Successfully to ${formData.email}`, {
         position: "top-center",
       });
 

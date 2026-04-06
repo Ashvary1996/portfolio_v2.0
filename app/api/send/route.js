@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.MAIL_KEY);
 const htmlTemplate = ({ name, email, subject, message }) => {
-    return `
+  return `
   <div style="font-family: Arial, sans-serif; background:#f6f9fc; padding:20px;">
     
     <div style="max-width:600px; margin:0 auto; background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.05);">
@@ -161,32 +161,32 @@ const htmlTemplate = ({ name, email, subject, message }) => {
 // };
 
 export async function POST(req) {
-    try {
-        const { name, email, subject, message } = await req.json();
-        //   1. Send to YOU
-        const adminMail = await resend.emails.send({
-            from: "Ashvary | Portfolio <ashvary.portfolio@resend.dev>",
-            to: ["ashvarygidian1996@gmail.com"],
-            reply_to: email,
-            subject: subject,
-            html: htmlTemplate({ name, email, subject, message }),
-        });
-        //   2. Send auto-reply to USER
-        // const userMail = await resend.emails.send({
-        //     from: "Ashvary | Portfolio <ashvary.portfolio@resend.dev>",
-        //     to: [email],
-        //     subject: "Hey! Ashvary here — got your message 👋",
-        //     html: autoReplyTemplate({ name }),
-        // });
-        // console.log("Admin:", adminMail);
-        // console.log("User:", userMail);
+  try {
+    const { name, email, subject, message } = await req.json();
+    //   1. Send to YOU
+    const adminMail = await resend.emails.send({
+      from: "Ashvary | Portfolio <ashvary.portfolio@resend.dev>",
+      to: ["ashvarygidian1996@gmail.com"],
+      reply_to: email,
+      subject: subject,
+      html: htmlTemplate({ name, email, subject, message }),
+    });
+    //   2. Send auto-reply to USER
+    // const userMail = await resend.emails.send({
+    //     from: "Ashvary | Portfolio <ashvary.portfolio@resend.dev>",
+    //     to: [email],
+    //     subject: "Hey! Ashvary here — got your message 👋",
+    //     html: autoReplyTemplate({ name }),
+    // });
+    // console.log("Admin:", adminMail);
+    // console.log("User:", userMail);
 
 
-        return Response.json({
-            success: true, adminMail,
-            userMail,
-        });
-    } catch (err) {
-        return Response.json({ success: false, error: err.message });
-    }
+    return Response.json({
+      success: true,
+      message: `Email sent successfully to ${email}`, 
+    });
+  } catch (err) {
+    return Response.json({ success: false, error: err.message });
+  }
 }
