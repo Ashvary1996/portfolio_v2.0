@@ -19,7 +19,7 @@ export default function ResumeModal({ open, setOpen }: Props) {
   }, []);
 
   const pdfSrc = isMobile
-    ? "https://drive.google.com/file/d/1b0ATnpptDrz7G1SRWC_R9aYIxS1cIzW2/preview"
+    ? "https://drive.google.com/file/d/1F188mN6ICf7uYJg8Vn49SxFmMA3cVtL2/view"
     : "/resume/ashvary-gidian-resume.pdf";
   return (
     <Dialog open={open} onOpenChange={setOpen}>
