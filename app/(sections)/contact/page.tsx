@@ -9,7 +9,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { toast } from "sonner";
-import emailjs from "@emailjs/browser";
+
 import { useState, ChangeEvent, useMemo } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Field, FieldLabel } from "@/components/ui/field";
@@ -21,12 +21,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { z } from "zod";
 
-// interface FormData {
-//   name: string;
-//   email: string;
-//   subject: string;
-//   message: string;
-// }
 const contactSchema = z.object({
   name: z.string().min(3, "Name must be at least 3 characters"),
   email: z.email("Enter a valid email"),
@@ -57,21 +51,7 @@ function Contact() {
     const { name, value } = e.target;
     const updated = { ...formData, [name]: value };
     setFormData(updated);
-    // const result = contactSchema.safeParse(updated);
-    // if (!result.success) {
-    //   const fieldErrors: any = {};
-    //   result.error.issues.forEach((err) => {
-    //     fieldErrors[err.path[0]] = err.message;
-    //   });
-    //   setErrors(fieldErrors);
-    // } else {
-    //   setErrors({});
-    // }
   };
-  const isFormValid = useMemo(() => {
-    const result = contactSchema.safeParse(formData);
-    return result.success;
-  }, [formData]);
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -88,17 +68,24 @@ function Contact() {
     setStatus("loading");
 
     try {
-      const result = await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-        e.currentTarget,
-        process.env.NEXT_PUBLIC_PRIVATE_KEY as string,
-      );
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+      if (!result.success) {
+        throw new Error(result.error);
+      }
+      // console.log( result );
       setStatus("success");
       setTimeout(() => setStatus("idle"), 3000);
-      console.log(result.text);
+
       console.log("Form submitted ✅");
-      console.log("Email sent successfully:", result.text);
+      // console.log("Email sent successfully:", result.data);
 
       toast.success("Email Sent Successfully", {
         position: "top-center",
@@ -209,10 +196,10 @@ function Contact() {
                       size={17}
                     />
                     <a
-                      href="mailto:ashvarygidian1996@gmail.com"
+                      href="mailto:ashvary11@gmail.com"
                       className="hover:text-blue-400 transition-colors duration-300"
                     >
-                      ashvarygidian1996@gmail.com
+                      ashvary11@gmail.com
                     </a>
                   </li>
                 </ul>
@@ -248,7 +235,7 @@ function Contact() {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <a
-                        href="mailto:ashvarygidian1996@gmail.com"
+                        href="mailto:ashvary11@gmail.com"
                         className="text-gray-600 dark:text-gray-400 hover:text-orange-500 dark:hover:text-orange-500 transition duration-300 hover:scale-125"
                       >
                         <FaEnvelope size={28} />

@@ -127,6 +127,7 @@ const Projects = () => {
           <div className="space-y-8 md:space-y-12">
             {majorProjects
               // .sort((a, b) => b.id - a.id)
+              .filter((project) => project.display !== false)
               .sort((a, b) => a.order - b.order)
               .map((project, index) => {
                 const fImages = project.images?.map((img) => img.src) ?? [];
@@ -174,7 +175,9 @@ const Projects = () => {
                               href={project.links.demo}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-4 py-2 rounded-lg border text-sm hover:bg-muted transition"
+                              className="px-4 bg-red-600 text-white py-2 rounded-lg border text-sm 
+  transition-colors duration-300 ease-in-out
+  hover:bg-red-700  "
                             >
                               🎥 Demo Video
                             </a>
@@ -300,7 +303,7 @@ const Projects = () => {
                               href={project.links.demo}
                               target="_blank"
                               rel="noreferrer"
-                              className="hover:text-green-400"
+                              className="hover:text-red-600"
                             >
                               <FaVideo
                                 title="Demo"

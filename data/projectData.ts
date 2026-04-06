@@ -1,6 +1,7 @@
 export type Project = {
   id: number;
   order: number;
+  display: boolean;
   slug: string;
   title: string;
   tagline: string;
@@ -34,6 +35,7 @@ export const majorProjects: Project[] = [
   {
     id: 1,
     order: 5,
+    display: true,
     slug: "flashcard-generator",
     title: "Flashcard Generator",
     tagline: "Interactive flashcard creation app",
@@ -117,6 +119,7 @@ export const majorProjects: Project[] = [
   {
     id: 2,
     order: 3,
+     display: true,
     slug: "red-bus",
     title: "Red Bus",
     tagline: "Bus ticket booking web application",
@@ -174,7 +177,7 @@ export const majorProjects: Project[] = [
     links: {
       live: "https://red-bus-by-ashvary.netlify.app/",
       github: "https://github.com/Ashvary1996/RedBus",
-      demo: "https://drive.google.com/file/d/1pgv0SMutudGzkR4PHmj6mvkcZnsWf2Xa/view?usp=drive_link",
+      demo: "https://youtu.be/HDNleQAdPmo",
     },
 
     techStack: [
@@ -214,6 +217,7 @@ export const majorProjects: Project[] = [
   {
     id: 3,
     order: 2,
+     display: true,
     slug: "e-com-app",
     title: "E-Commerce App",
     tagline: "Full-stack e-commerce platform with admin dashboard",
@@ -340,7 +344,7 @@ export const majorProjects: Project[] = [
 
     links: {
       live: "https://ecom-app-by-ashvary.netlify.app/",
-      demo: "https://drive.google.com/file/d/19jmegB9GKpr6Xjx0Eqq-fB_eItsMmNNy/view?usp=drive_link",
+      demo: "https://youtu.be/m-sjNPMmv5M",
       github: "https://github.com/Ashvary1996/e-com-app",
     },
 
@@ -375,6 +379,7 @@ export const majorProjects: Project[] = [
   {
     id: 4,
     order: 1,
+     display: true,
     slug: "tripzy-ai",
     title: "Tripzy-AI",
     tagline: "AI-Powered Trip Planner with 3D Globe & Chatbot",
@@ -449,7 +454,7 @@ export const majorProjects: Project[] = [
     links: {
       live: "https://tripzy-ai.vercel.app/",
       github: "https://github.com/Ashvary1996/TripzyAi",
-      demo: "https://drive.google.com/file/d/1v3mBbF-fnfv7igH_t6v9MY7AJ6ub3O2f/view?usp=drive_link",
+      demo: "https://youtu.be/rDvS5ZGAVeg",
     },
 
     techStack: [
@@ -482,6 +487,7 @@ export const majorProjects: Project[] = [
   {
     id: 5,
     order: 4,
+     display: false,
     slug: "real-time-chatbot-support-system",
     title: "Real-Time Chatbot & Support System",
     tagline: "Scalable real-time chat system with live support & admin control",
@@ -511,7 +517,7 @@ Advanced features like auto-closing inactive sessions, admin notifications, and 
 
     links: {
       live: "",
-      demo: "https://drive.google.com/file/d/1aH1TcbSeSiMf2m1TAtAS8FOt_S4aigaC/view?usp=drive_link",
+      demo: "https://youtu.be/a_NgU7Rc3bs",
       github: "",
     },
 
@@ -570,6 +576,7 @@ const archievedProjects: Project[] = [
   {
     id: 5,
     order: 9,
+     display: false,
     slug: "book-my-show",
     title: "BookMyShow",
     tagline: "Movie ticket booking application",
