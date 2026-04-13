@@ -27,7 +27,7 @@ export default function Footer() {
         {/* Right Side - Social Icons */}
         <div className="flex flex-wrap gap-5 text-xl justify-center md:justify-start">
           <a
-            href="https://github.com/Ashvary1996"
+            href="https://github.com/Ashvary11"
             target="_blank"
             rel="noreferrer"
             className="hover:scale-110 hover:text-primary transition"
@@ -45,7 +45,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="mailto:ashvarygidian1996@gmail.com"
+            href="mailto:ashvary11@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 hover:text-primary transition"
