@@ -210,7 +210,7 @@ function Contact() {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <a
-                        href="https://github.com/Ashvary1996"
+                        href="https://github.com/Ashvary11"
                         target="_blank"
                         rel="noreferrer"
                         className="text-gray-600 hover:text-black transition duration-300 hover:scale-125 dark:hover:text-gray-500"
