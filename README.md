@@ -232,7 +232,7 @@ A React-based application for creating, managing, and printing flashcards with l
   <a href="https://www.linkedin.com/in/ashvary-gidian">
     <img src="https://img.shields.io/badge/LinkedIn-Ashvary_Gidian-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="https://github.com/Ashvary111">
+  <a href="https://github.com/Ashvary11">
     <img src="https://img.shields.io/badge/GitHub-Ashvary11-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
 </p>
