@@ -9,7 +9,7 @@ export default function ResumeViewer() {
   }, []);
 
   const pdfSrc = isMobile
-    ? "https://drive.google.com/file/d/1b0ATnpptDrz7G1SRWC_R9aYIxS1cIzW2/preview"
+    ? "https://drive.google.com/file/d/1rOD-Hfh2y0sApYD6g0HfWxvLvLxeiXxG/preview"
     : "/resume/ashvary-gidian-resume.pdf";
 
   function handleClose() {
