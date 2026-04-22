@@ -8,13 +8,13 @@
   <a href="https://ashvarygidian.vercel.app">
     <img src="https://img.shields.io/badge/🌐_Live_Portfolio-Visit_Now-3B82F6?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio" />
   </a>
-  <a href="https://github.com/Ashvary1996">
+  <a href="https://github.com/Ashvary11">
     <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
   <a href="https://www.linkedin.com/in/ashvary-gidian">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="mailto:ashvarygidian@gmail.com">
+  <a href="mailto:ashvary11@gmail.com">
     <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 </p>
@@ -24,7 +24,7 @@
 ## 🖼️ About Me
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Ashvary1996&label=Profile%20Views&color=3B82F6&style=for-the-badge" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=Ashvary11&label=Profile%20Views&color=3B82F6&style=for-the-badge" alt="Profile Views" />
 </p>
 
 I specialize in the **MERN stack** (MongoDB, Express, React, Node.js) and have experience with Next.js, TypeScript, and various modern frameworks.
@@ -213,12 +213,12 @@ A React-based application for creating, managing, and printing flashcards with l
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ashvary1996&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117" alt="GitHub Stats" height="180" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ashvary1996&layout=compact&theme=radical&hide_border=true&bg_color=0d1117" alt="Top Languages" height="180" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Ashvary11&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117" alt="GitHub Stats" height="180" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ashvary11&layout=compact&theme=radical&hide_border=true&bg_color=0d1117" alt="Top Languages" height="180" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Ashvary1996&theme=radical&hide_border=true&background=0d1117" alt="Streak Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Ashvary11&theme=radical&hide_border=true&background=0d1117" alt="Streak Stats" />
 </p>
 
 ---
@@ -226,14 +226,14 @@ A React-based application for creating, managing, and printing flashcards with l
 ## 📬 Contact Me
 
 <p align="center">
-  <a href="mailto:ashvarygidian@gmail.com">
-    <img src="https://img.shields.io/badge/Email-ashvarygidian@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="mailto:ashvary11@gmail.com">
+    <img src="https://img.shields.io/badge/Email-ashvary11@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://www.linkedin.com/in/ashvary-gidian">
     <img src="https://img.shields.io/badge/LinkedIn-Ashvary_Gidian-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="https://github.com/Ashvary1996">
-    <img src="https://img.shields.io/badge/GitHub-Ashvary1996-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <a href="https://github.com/Ashvary11">
+    <img src="https://img.shields.io/badge/GitHub-Ashvary11-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
 </p>
 
@@ -254,6 +254,6 @@ A React-based application for creating, managing, and printing flashcards with l
 </p>
 
 <p align="center">
-  <sub>⭐️ From <a href="https://github.com/Ashvary1996">Ashvary Gidian</a> with ❤️</sub>
+  <sub>⭐️ From <a href="https://github.com/Ashvary11">Ashvary Gidian</a> with ❤️</sub>
 </p>
 
