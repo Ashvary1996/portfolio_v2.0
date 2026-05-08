@@ -184,7 +184,7 @@ export async function POST(req) {
 
     return Response.json({
       success: true,
-      message: `Email sent successfully to ${email}`, 
+      message: `Email sent successfully.`, 
     });
   } catch (err) {
     return Response.json({ success: false, error: err.message });

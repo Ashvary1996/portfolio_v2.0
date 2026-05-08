@@ -88,7 +88,7 @@ function Contact() {
       console.log("Form submitted ✅");
       console.log(result.message);
 
-      toast.success(`Email Sent Successfully to ${formData.email}`, {
+      toast.success(`Email Sent Successfully`, {
         position: "top-center",
       });
 
